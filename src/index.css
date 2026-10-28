@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+    --font-serif: 'Cormorant Garamond', 'Crimson Pro', Georgia, Cambria, serif;
+    --font-body: 'Crimson Pro', 'Cormorant Garamond', Georgia, Cambria, serif;
+    --color-vellum: #F4ECD8;
+    --color-vellum-deep: #E6D7B8;
+    --color-walnut: #3B261A;
+    --color-walnut-deep: #24160E;
+    --color-brass: #A98545;
+    --color-sepia: #59432E;
+    --color-ink: #2C1E12;
+    --color-candle: #F3C879;
+    --color-crimson: #873B35;
+    --color-moss: #68704A;
+    --color-stone: #8E8575;
+    --sat: env(safe-area-inset-top, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+  }
+
+  html, body {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #24160E;
+    color: #2C1E12;
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Modal & Drawer Scroll Containment (modern-web-guidance: prevent-page-scroll-under-modal-dialog) */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.scroll-contain {
+  overscroll-behavior: contain;
+}
+
+/* Tactile Parchment & Manuscript Surface Treatments */
+.vellum-sheet {
+  background-color: #F4ECD8;
+  background-image:
+    radial-gradient(ellipse at 50% 35%, rgba(255, 250, 238, 0.55) 0%, rgba(224, 206, 170, 0.35) 70%, rgba(186, 158, 114, 0.48) 100%),
+    repeating-linear-gradient(0deg, rgba(89, 67, 46, 0.022) 0px, rgba(89, 67, 46, 0.022) 1px, transparent 1px, transparent 4px);
+  color: #2C1E12;
+}
+
+.vellum-card {
+  background-color: #EFE3C6;
+  background-image: linear-gradient(180deg, rgba(248, 242, 226, 0.65) 0%, rgba(232, 216, 182, 0.65) 100%);
+  color: #2C1E12;
+}
+
+.walnut-beam {
+  background-color: #2A1A10;
+  background-image:
+    linear-gradient(180deg, #3B261A 0%, #24160E 65%, #1B100A 100%);
+  color: #F4ECD8;
+}
+
+.leather-folio {
+  background-color: #3B261A;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(92, 58, 38, 0.35) 0%, rgba(36, 22, 14, 0.85) 100%);
+}
+
+/* Illuminated Manuscript Drop Cap */
+.manuscript-dropcap {
+  float: left;
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 0.82;
+  padding-top: 0.05rem;
+  padding-right: 0.3rem;
+  padding-bottom: 0.05rem;
+  margin-right: 0.15rem;
+  font-weight: 700;
+  color: #873B35;
+  text-shadow: 1px 1px 0px #A98545;
+}
+
+@media (min-width: 640px) {
+  .manuscript-dropcap {
+    font-size: 2.6rem;
+    line-height: 0.78;
+    padding-top: 0.08rem;
+    padding-right: 0.4rem;
+    margin-right: 0.2rem;
+  }
+}
+
+.manuscript-dropcap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 0.82;
+  padding-top: 0.05rem;
+  padding-right: 0.3rem;
+  padding-bottom: 0.05rem;
+  margin-right: 0.15rem;
+  font-weight: 700;
+  color: #873B35;
+  text-shadow: 1px 1px 0px #A98545;
+}
+
+@media (min-width: 640px) {
+  .manuscript-dropcap::first-letter {
+    font-size: 2.6rem;
+    line-height: 0.78;
+    padding-top: 0.08rem;
+    padding-right: 0.4rem;
+    margin-right: 0.2rem;
+  }
+}
+
+/* Custom Antique Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E2D2B0;
+  border-left: 1px solid rgba(89, 67, 46, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8C6D3B;
+  border-radius: 2px;
+  border: 1px solid #F4ECD8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #59432E;
+}
+
+/* High-contrast visible keyboard focus ring (WCAG 1.4.11 >= 3:1) */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #873B35;
+  outline-offset: 2px;
+}
+
+.walnut-beam button:focus-visible,
+.walnut-beam a:focus-visible {
+  outline: 2px solid #F3C879;
+  outline-offset: 2px;
+}
+
+/* Floating Island Inspection Plaque & Staggered Literary Content Transitions */
+@keyframes floatingContentReveal {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.floating-content-stagger-1 {
+  animation: floatingContentReveal 460ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.floating-content-stagger-2 {
+  animation: floatingContentReveal 480ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.floating-content-stagger-3 {
+  animation: floatingContentReveal 500ms cubic-bezier(0.22, 1, 0.36, 1) 340ms both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}

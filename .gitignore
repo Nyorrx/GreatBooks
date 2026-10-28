@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production Build Output
+dist/
+build/
+out/
+
+# Environment Variables & Local Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Vite, Vitest & TypeScript Caches
+.vite/
+.vite-temp/
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Logs & Debug Output
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor & OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary Verification & Test Screenshots
+# (Preserves main screenshot.png for portfolio preview in README)
+screenshot_*.png
