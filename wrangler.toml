@@ -1,3 +1,7 @@
 name = "celestial-atlas-great-books"
-pages_build_output_dir = "dist"
 compatibility_date = "2026-11-01"
+pages_build_output_dir = "dist"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
