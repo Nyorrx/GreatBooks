@@ -58,12 +58,12 @@ export const HomeOverlay: React.FC<HomeOverlayProps> = ({
           <div className="mx-auto my-3 sm:my-4 h-0.5 max-w-md border-t border-b border-[#59432E]/30" />
 
           <p className="mx-auto max-w-2xl text-left font-serif text-xs sm:text-base leading-relaxed sm:leading-relaxed text-[#2C1E12]">
-            <span className="manuscript-dropcap">U</span>pon this dark walnut table in Ithaca lies a
-            weathered vellum chart drawn across generations of inquiry. Rising from the parchment
-            are seven handcrafted miniature dioramas of carved cedar, bronze, limestone, and ochre:
-            the swirling sandstorm of Uz, the tiered banyan court of the Panchatantra, the stone
-            bridge to Lanka, the bronze chariot of Kurukshetra, the walled citadel of Troy, the
-            sheltered harbor of Ithaca, and the mountain pass of Roncevaux.
+            <span className="manuscript-dropcap">O</span>n this walnut table sits a parchment map
+            I built for our Great Books course, with Ithaca right at the center. Around the map are
+            seven miniature 3D landmarks representing the books we read this semester: the harbor of
+            Ithaca, the desert storm of Uz, the banyan tree of the Panchatantra, the stone bridge to
+            Lanka, the war chariot at Kurukshetra, the walls of Troy, and the mountain pass of
+            Roncevaux.
           </p>
 
           {/* Primary Action & Ithaca Centerpiece Shortcut */}
@@ -106,7 +106,7 @@ export const HomeOverlay: React.FC<HomeOverlayProps> = ({
                   The Traveler&apos;s Identity
                 </p>
                 <p className="mt-0.5 text-[11px] sm:text-xs text-[#59432E] leading-snug">
-                  Navigator&apos;s logbook, reader profile &amp; literary journey
+                  About me, what I like to read, and my thoughts on the class
                 </p>
               </div>
             </button>
@@ -127,7 +127,7 @@ export const HomeOverlay: React.FC<HomeOverlayProps> = ({
                   The Favorite Voyage
                 </p>
                 <p className="mt-0.5 text-[11px] sm:text-xs text-[#59432E] leading-snug">
-                  Homer&apos;s Odyssey: Metis, Penelope &amp; Homecoming
+                  Why Homer&apos;s Odyssey was my favorite reading this semester
                 </p>
               </div>
             </button>
@@ -148,7 +148,7 @@ export const HomeOverlay: React.FC<HomeOverlayProps> = ({
                   The Navigator&apos;s Lessons
                 </p>
                 <p className="mt-0.5 text-[11px] sm:text-xs text-[#59432E] leading-snug">
-                  Cross-cultural synthesis &amp; 7-work cartographic matrix
+                  Comparing all seven books across cultures and literary lenses
                 </p>
               </div>
             </button>
@@ -169,7 +169,7 @@ export const HomeOverlay: React.FC<HomeOverlayProps> = ({
                   The Last Page of the Journal
                 </p>
                 <p className="mt-0.5 text-[11px] sm:text-xs text-[#59432E] leading-snug">
-                  Five personal reflections on literature, lenses &amp; life
+                  Five personal reflections on what I learned from these books
                 </p>
               </div>
             </button>
@@ -179,7 +179,7 @@ export const HomeOverlay: React.FC<HomeOverlayProps> = ({
           <div className="mt-3.5 sm:mt-5 flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-medium text-[#59432E]">
             <Hand className="h-3.5 w-3.5 shrink-0 text-[#873B35]" aria-hidden="true" />
             <span className="leading-snug">
-              Drag to inspect • Pinch/scroll to zoom • Tap any miniature or seal to open Field Journal
+              Drag to look around • Scroll or pinch to zoom • Click any island to read my notes
             </span>
           </div>
         </div>

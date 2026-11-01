@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Outer Dark Leather Base -->
+  <circle cx="32" cy="32" r="30" fill="#24160E" stroke="#A98545" stroke-width="2.5" />
+  <!-- Inner Brass Ring -->
+  <circle cx="32" cy="32" r="23" stroke="#873B35" stroke-width="1.2" stroke-dasharray="2 2" />
+  <!-- 8-Pointed Compass Rose Points -->
+  <!-- North -->
+  <polygon points="32,8 36,28 32,32 28,28" fill="#F3C879" />
+  <polygon points="32,8 32,32 28,28" fill="#D4AF37" />
+  <!-- South -->
+  <polygon points="32,56 36,36 32,32 28,36" fill="#F3C879" />
+  <polygon points="32,56 32,32 36,36" fill="#873B35" />
+  <!-- West -->
+  <polygon points="8,32 28,36 32,32 28,28" fill="#F3C879" />
+  <polygon points="8,32 32,32 28,36" fill="#873B35" />
+  <!-- East -->
+  <polygon points="56,32 36,36 32,32 36,28" fill="#F3C879" />
+  <polygon points="56,32 32,32 36,28" fill="#D4AF37" />
+  <!-- Diagonal Corner Points -->
+  <polygon points="15,15 32,32 27,24" fill="#C89D4B" opacity="0.8" />
+  <polygon points="49,15 32,32 40,24" fill="#C89D4B" opacity="0.8" />
+  <polygon points="15,49 32,32 24,40" fill="#753028" opacity="0.8" />
+  <polygon points="49,49 32,32 40,37" fill="#753028" opacity="0.8" />
+  <!-- Central Brass Rivet -->
+  <circle cx="32" cy="32" r="4.5" fill="#F4ECD8" stroke="#A98545" stroke-width="1.5" />
+</svg>

@@ -59,8 +59,8 @@ An immersive 3D historical cartography experience and Great Books digital academ
 
 ```bash
 # Clone the repository
-git clone https://github.com/USERNAME/REPOSITORY.git
-cd REPOSITORY
+git clone https://github.com/Nyorrx/GreatBooks.git
+cd GreatBooks
 
 # Install dependencies
 npm install
@@ -97,10 +97,59 @@ The compiled static files are generated in `dist/`.
 
 ## Deployment
 
-Because this project is a fully static client-side web application configured with relative base paths (`base: './'` in `vite.config.ts`), it can be deployed to any static host without configuration changes:
+Because this project is a fully static client-side web application configured with relative base paths (`base: './'` in `vite.config.ts`), it deploys cleanly to root domains as well as repository subdirectories (such as `https://nyorrx.github.io/GreatBooks/`).
 
-- **GitHub Pages**: Deploy the `dist/` folder directly via GitHub Actions or the `gh-pages` branch.
-- **Vercel / Netlify / Cloudflare Pages**: Set build command to `npm run build` and output directory to `dist`.
+### 1. Cloudflare Pages (Direct GitHub Integration - Recommended)
+
+1. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com) and navigate to **Workers & Pages** > **Create application** > **Pages** > **Connect to Git**.
+2. Select your repository (`GreatBooks`).
+3. Set the build configuration:
+   - **Framework preset**: `Vite`
+   - **Build command**: `npm run build`
+   - **Build output directory**: `dist`
+   - **Root directory**: `/` (leave default)
+4. (Recommended) Under **Environment variables**, set:
+   - `NODE_VERSION` = `20`
+5. Click **Save and Deploy**. Cloudflare Pages will automatically build and publish your site with edge caching, SPA routing rules ([`_redirects`](./public/_redirects)), and security/asset headers ([`_headers`](./public/_headers)). Every subsequent push to `master` will deploy instantly.
+
+### 2. GitHub Actions (Continuous Integration)
+
+The repository includes [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) which automatically runs `npm ci`, vitest unit tests (`npm test`), and the production bundle build (`npm run build`) on every push and pull request.
+
+### 3. Vercel
+
+1. Import the repository into [Vercel](https://vercel.com).
+2. Framework Preset: **Vite**.
+3. Build Command: `npm run build`.
+4. Output Directory: `dist`.
+5. The included [`vercel.json`](./vercel.json) automatically handles single-page route rewrites.
+
+### 3. Netlify
+
+1. Connect the repository in [Netlify](https://netlify.com).
+2. Build command: `npm run build`.
+3. Publish directory: `dist`.
+4. The included [`public/_redirects`](./public/_redirects) guarantees clean routing.
+
+---
+
+## Environment Variables
+
+This application is completely self-contained and runs entirely in the client browser. No backend server, secret API keys, or database credentials are required.
+
+An optional template is provided in [`.env.example`](./.env.example):
+- `VITE_PORT`: Custom port for local development (default `5173`).
+- `VITE_APP_TITLE`: Application browser title.
+
+Never commit personal `.env` or credential files to version control. The repository's [`.gitignore`](./.gitignore) excludes all `.env` and `.env.*.local` files automatically.
+
+---
+
+## Important Maintenance Notes
+
+- **Preservation of the Seven Islands**: The 3D models in [`src/three/monuments.ts`](file:///src/three/monuments.ts) are hand-crafted procedural dioramas. Keep their geometric scales, anchor points, and coordinate definitions intact.
+- **Audio Assets**: Audio tracks reside in [`public/audio/islands/`](file:///public/audio/islands/). The application uses [`src/data/islandAudio.ts`](file:///src/data/islandAudio.ts) with `import.meta.env.BASE_URL` to ensure paths resolve across custom domains and subdirectories.
+- **Adding Reflections or Modifying Content**: Academic profile and reflection texts are centrally managed in [`src/data/portfolioData.ts`](file:///src/data/portfolioData.ts). Literary realm lore and quotations are managed in [`src/data/realms.ts`](file:///src/data/realms.ts).
 
 ---
 

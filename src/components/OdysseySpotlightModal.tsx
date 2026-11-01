@@ -36,7 +36,7 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
             </div>
             <div>
               <span className="font-mono text-[11px] font-semibold tracking-widest text-[#F3C879] uppercase">
-                Folio II • The Favorite Voyage &amp; Emotional Centerpiece
+                Folio II • My Favorite Work from the Course
               </span>
               <h2
                 id="odyssey-spotlight-heading"
@@ -77,7 +77,7 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
                 Attribution: {ODYSSEY_SPOTLIGHT_DATA.attribution}
               </p>
               <h3 className="font-display text-xl font-bold text-[#2C1E12] uppercase sm:text-2xl">
-                Why Ithaca Anchors the Navigator&apos;s Chart Table
+                Why The Odyssey Sits at the Center of My Map
               </h3>
               <p className="font-serif text-[15px] leading-7 text-[#2C1E12] sm:text-base">
                 <span className="manuscript-dropcap">
@@ -119,7 +119,7 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
             <div className="flex items-center gap-2 border-b border-[#59432E]/35 pb-2">
               <Feather className="h-4 w-4 text-[#873B35]" aria-hidden="true" />
               <h3 className="font-display text-base font-bold tracking-wider text-[#2C1E12] uppercase">
-                Reasons for Choosing The Odyssey as My Favorite Literary Masterpiece
+                Why I Chose The Odyssey as My Favorite Work
               </h3>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -147,7 +147,7 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
             <div className="flex items-center gap-2 border-b border-[#59432E]/35 pb-2">
               <Users className="h-4 w-4 text-[#873B35]" aria-hidden="true" />
               <h3 className="font-display text-base font-bold tracking-wider text-[#2C1E12] uppercase">
-                Key Figures &amp; Moral Counterweights of the Voyage
+                Main Characters &amp; What They Represent
               </h3>
             </div>
             <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -174,7 +174,7 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
             <div className="flex items-center gap-2 border-b border-[#59432E]/35 pb-2">
               <BookOpen className="h-4 w-4 text-[#873B35]" aria-hidden="true" />
               <h3 className="font-display text-base font-bold tracking-wider text-[#2C1E12] uppercase">
-                Three Thematic Entries of Odyssean Wisdom
+                Three Main Themes in The Odyssey
               </h3>
             </div>
 
@@ -186,7 +186,7 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
                 >
                   <div>
                     <span className="font-mono text-[11px] font-bold text-[#873B35] uppercase">
-                      Entry 0{idx + 1}
+                      Theme 0{idx + 1}
                     </span>
                     <h4 className="mt-1 font-display text-lg font-bold text-[#2C1E12] uppercase">
                       {theme.title}
@@ -201,7 +201,7 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
 
                   <div className="mt-4 rounded border border-[#68704A]/60 bg-[#E6E4D2] p-3.5">
                     <span className="font-display text-[10px] font-bold tracking-wider text-[#42482D] uppercase">
-                      College Life &amp; Decision-Making Resonance
+                      How This Connects to College &amp; Everyday Life
                     </span>
                     <p className="mt-1 font-serif text-xs leading-relaxed text-[#2C1E12]">
                       {theme.collegeAndLifeConnection}
@@ -216,10 +216,10 @@ export const OdysseySpotlightModal: React.FC<OdysseySpotlightModalProps> = ({
           <div className="rounded border-2 border-[#A98545] bg-[#EFE3C6] p-5 sm:p-6">
             <div>
               <span className="font-mono text-[11px] font-bold tracking-wider text-[#873B35] uppercase">
-                Navigator&apos;s Personal Inscription
+                Personal Reflection
               </span>
               <h3 className="font-display text-lg font-bold text-[#2C1E12] uppercase">
-                What Returning to Ithaca Means in My Own Journey
+                What Odysseus&apos; Trip Home Means to Me
               </h3>
             </div>
 

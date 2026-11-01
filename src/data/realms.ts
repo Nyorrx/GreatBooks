@@ -21,10 +21,10 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       civilizationRegion: 'Archaic Greece',
       monumentName: 'The Harbor of Ithaca',
       monumentDescription:
-        'A finely crafted miniature Greek trireme with carved cedar hull, ivory oars, mast, rigging, and weathered sail entering a sheltered harbor framed by rocky Ithacan cliffs, olive trees, a coastal path, and an inlaid brass compass rose.',
-      materialsUsed: 'Aged cedar, carved ivory, antique brass compass rose, muted sea slate, and olive green',
-      cartographicNote: 'Portus Ithacae • The homeward harbor of Odysseus and the rooted olive tree',
-      bearingLabel: '000° Origin • Heart of the Chart Table',
+        'A small Greek ship with a cedar hull, ivory oars, and a worn sail pulling into a quiet harbor surrounded by rocky cliffs, olive trees, a shore path, and a brass compass rose.',
+      materialsUsed: 'Aged cedar, carved ivory, antique brass, slate blue, and olive green',
+      cartographicNote: 'Portus Ithacae • Odysseus\' home harbor and the rooted olive tree',
+      bearingLabel: '000° Origin • Center of the Chart Table',
       compassAngleDeg: 0,
       coordinates: [0, 0.25, 0],
       celestialDesignation: 'Chart Origin • Sector I • 38° 22\' N, 20° 43\' E [ITHACA]',
@@ -33,32 +33,32 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       secondaryHex: '#A98545',
       badgeColorClass: 'text-[#F4ECD8] border-[#873B35] bg-[#873B35]',
       borderColorClass: 'border-[#873B35]',
-      shortEvocativeTagline: 'A carved cedar trireme gliding into the sheltered cliffs and olive groves of home.',
+      shortEvocativeTagline: 'A cedar ship sailing back into the quiet cliffs and olive trees of home.',
       contextualIntroduction:
-        'Positioned at the heart of the Navigator\'s Chart Table, Homer\'s Odyssey charts the ten-year homeward voyage of Odysseus, polytropos ("the man of twists and turns"), following the fall of Troy. More than an adventure across monster-haunted seas, the poem is a psychological and philosophical voyage about reclaiming human identity, resisting forgetfulness, learning humility, and rebuilding a fractured household alongside an intellectual equal.',
+        'Sitting right at the center of the map, Homer\'s Odyssey follows Odysseus on his ten-year trip home after the fall of Troy. Even though the story is famous for monsters and sea storms, it is really about a tired man trying to hold on to his identity, control his pride, and rebuild his home and marriage alongside a wife who is every bit as sharp as he is.',
       literaryLenses: ['Archetypal Criticism', 'Psychological Criticism'],
       analyticalThesis:
-        'Read through archetypal and psychological criticism, The Odyssey redefines heroism from the Iliadic ideal of battlefield force to the enduring discipline of metis (adaptive intelligence), showing that genuine nostos (homecoming) requires resisting the temptations of oblivion and timeless stasis, embracing the humility of the beggar\'s disguise, and restoring homophrosyne (like-minded partnership) with Penelope.',
+        'Looking at The Odyssey through archetypal and psychological criticism shows a different kind of hero than the warriors in The Iliad. Instead of winning through brute strength, Odysseus survives through metis, or practical intelligence. Truly coming home (nostos) means turning down easy escapes, accepting the humbling disguise of a beggar, and rebuilding an equal partnership (homophrosyne) with Penelope.',
       analyticalSections: [
         {
-          heading: 'Metis and the Psychological Trials of the Sea (Lotus-Eaters, Circe, Sirens, Calypso)',
+          heading: 'Metis and the Mental Tests at Sea (Lotus-Eaters, Circe, Sirens, Calypso)',
           paragraphs: [
-            'As Odysseus navigates the Mediterranean borderlands between myth and memory, each island functions as a psychological archetype testing what it means to remain human. The Lotus-Eaters offer sweet narcotic amnesia that erases the desire for home; Circe\'s drugs reduce unguarded appetites to swine; the Sirens weaponize nostalgia itself, singing of Troy\'s past glories to lure sailors onto a reef of bleached bones.',
-            'Most subtle of all is Calypso on Ogygia ("the Concealer"), who offers Odysseus ageless immortality if he stays with her in paradise. By sitting on the rocky shore weeping for mortal Ithaca and an aging wife (Book 5), Odysseus chooses finite, flawed, relational human life over static, isolated perfection. Throughout these trials, survival depends on metis (resourceful, self-regulating intelligence), though Odysseus must first outgrow the hubris that made him shout his real name to Polyphemus.'
+            'As Odysseus tries to get across the Mediterranean, each stop tests a different weakness in human nature. The Lotus-Eaters offer a pleasant way to forget home and give up. Circe\'s drugs turn men who cannot control their appetites into pigs. The Sirens use the past as a trap, singing about the glory of Troy to pull sailors onto the rocks.',
+            'Calypso\'s island is the hardest test of all because she offers Odysseus eternal youth if he stays with her. Still, in Book 5, we see him sitting on the shore crying because he wants to go back to rocky Ithaca and grow old with his mortal wife. Getting past these islands takes metis, which means thinking ahead and keeping his emotions in check, something Odysseus has to learn the hard way after foolishly shouting his real name to the Cyclops.'
           ]
         },
         {
-          heading: 'Nostos, the Beggar Disguise, and the Discipline of Humility (Book 20)',
+          heading: 'Nostos, the Beggar Disguise, and Learning Patience (Book 20)',
           paragraphs: [
-            'Physical arrival on Ithaca\'s soil in Book 13 is only the midpoint of the epic; the true psychological test unfolds inside Odysseus\' own palace. Disguised by Athena as a weathered, elderly beggar, the hero of Troy must endure footstools hurled at his head, mockery from arrogant suitors devouring his estate, and the sight of corrupt household betrayals without revealing himself prematurely.',
-            'In Book 20, lying awake on an untanned oxhide in the vestibule, Odysseus feels his heart "barking within him" like a mother dog defending her pups. Striking his breast, he speaks to his own heart: "Endure, my heart; a worse thing even than this didst thou once endure..." This moment marks the pinnacle of psychological self-mastery: heroism is no longer explosive wrath, but patient endurance guided by strategic timing.'
+            'Landing on Ithaca in Book 13 is only halfway through the story. The hardest test happens inside Odysseus\' own house. Athena disguises him as an old beggar, and the famous war hero has to stand there while arrogant suitors eat his food, insult him, and throw footstools at his head. If he loses his temper too early, he will be killed.',
+            'In Book 20, while lying awake in the entryway, Odysseus is so angry at the corruption in his house that his heart barks inside him like a dog protecting her puppies. He hits his chest and tells himself, "Endure, my heart; a worse thing even than this didst thou once endure..." Here, being a hero is not about lashing out in anger. It is about staying patient and waiting for the right moment to act.'
           ]
         },
         {
-          heading: 'Penelope, the Immovable Bed, and Homophrosyne (Harmony of Equal Minds)',
+          heading: 'Penelope, the Olive-Tree Bed, and Equal Minds (Homophrosyne)',
           paragraphs: [
-            'The Odyssey\'s emotional architecture rests on homophrosyne, the rare, profound harmony of two equal minds that Odysseus praises to Nausicaa in Book 6 and shares with Penelope in Book 23. For twenty years, Penelope has waged her own siege on Ithaca using dolos (craft) and metis: weaving and unweaving Laertes\' shroud by torchlight, testing strangers, and staging the contest of the great bow.',
-            'Even after the suitors lie slain and Eurycleia announces Odysseus\' return, Penelope refuses to be swept away before verifying the truth herself. By calmly instructing the nurse to move their bridal bed outside the chamber, she tests the one secret only the real Odysseus knows: that he built their bed around the living trunk of an olive tree rooted in the earth. In that flash of recognition, Odysseus is outwitted by his wife, and their reunion becomes the true harbor of the poem.'
+            'The emotional core of The Odyssey is homophrosyne, a Greek word for two people who truly think alike. Odysseus talks about this kind of marriage to Nausicaa in Book 6, and we see it in action with Penelope in Book 23. For twenty years, Penelope has been fighting her own battle at home using her wits, weaving and unweaving Laertes\' burial shroud at night and setting up the test of the bow.',
+            'Even after the suitors are dead and Eurycleia tells her Odysseus is back, Penelope refuses to just take someone\'s word for it. She calmly tells the nurse to move their marriage bed into the hall. That one comment tests a secret only the real Odysseus would know: the bed cannot be moved because he carved it straight out of a living olive tree still rooted in the ground. When Odysseus flares up about his bed being cut, Penelope knows for sure it is him. She actually outsmarts the master of tricks, proving they are true equals.'
           ]
         }
       ],
@@ -66,20 +66,20 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           term: 'Metis (Adaptive Intelligence)',
           originalScriptOrRoot: 'Greek: μῆτις',
-          definition: 'Resourceful cunning, strategic foresight, emotional self-regulation, and practical adaptability.',
-          analyticalSignificance: 'Shared by Athena, Odysseus, and Penelope; allows mortals to survive crises where brute strength (biê) fails.'
+          definition: 'Practical street smarts, planning ahead, self-control, and knowing how to adapt when things go wrong.',
+          analyticalSignificance: 'A trait shared by Athena, Odysseus, and Penelope that helps ordinary people survive situations where raw strength (biê) is useless.'
         },
         {
           term: 'Nostos (Homecoming)',
           originalScriptOrRoot: 'Greek: νόστος',
-          definition: 'The return to home, identity, memory, and community, which is also the root of "nostalgia" (the ache for return).',
-          analyticalSignificance: 'Requires not merely crossing geographical distance, but choosing mortal accountability over the amnesia of the Lotus-Eaters or the stasis of Calypso.'
+          definition: 'Returning to your home, family, and sense of self. It is also the Greek root for our word "nostalgia."',
+          analyticalSignificance: 'Coming home is not just about traveling across the map; it means choosing a real, imperfect life over the forgetfulness of the Lotus-Eaters or the easy immortality of Calypso.'
         },
         {
           term: 'Homophrosyne (Like-Mindedness)',
           originalScriptOrRoot: 'Greek: ὁμοφροσύνη',
-          definition: 'Deep intellectual and spiritual consonance between two partners of equal discernment.',
-          analyticalSignificance: 'Culminates in Penelope\'s test of the olive-tree bed in Book 23, proving that homecoming is relational rather than solitary.'
+          definition: 'A deep mental and emotional match between two partners who respect and understand each other.',
+          analyticalSignificance: 'Shown most clearly when Penelope tests Odysseus with the olive-tree bed in Book 23, proving that his homecoming is only complete when they reconnect as equals.'
         }
       ],
       verifiedQuotes: [
@@ -98,26 +98,26 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           targetRealmId: 'iliad',
           targetWorkTitle: 'The Iliad',
-          connectionInsight: 'Directly answers The Iliad\'s meditation on heroic death with a new heroism of survival, memory, and domestic restoration.'
+          connectionInsight: 'While The Iliad focuses on dying young for battlefield glory, The Odyssey asks what it takes to survive a war and rebuild a normal life at home.'
         },
         {
           targetRealmId: 'panchatantra',
           targetWorkTitle: 'The Panchatantra',
-          connectionInsight: 'Parallels Niti-shastra in prizing strategic discernment, patience, and rhetorical intelligence over impulsive force.'
+          connectionInsight: 'Both books value patience, careful speech, and clever problem-solving over rushing in with force.'
         },
         {
           targetRealmId: 'ramayana',
           targetWorkTitle: 'The Ramayana',
-          connectionInsight: 'Penelope and Sita stand across cultures as archetypes of unwavering moral agency and intellectual resilience during decades of separation.'
+          connectionInsight: 'Penelope and Sita both hold their ground with intelligence and quiet strength while separated from their husbands for years.'
         }
       ],
       contemporaryReflection:
-        'In modern university life and early adulthood, we constantly encounter our own Lotus-Eaters (digital distraction and escapism) and Sirens (comparison and perfectionist ego). The Odyssey teaches that maturity is the willingness to start over humbly, regulate our impulses when tested, and remember the people and values that anchor our home.',
+        'In college and everyday life, we deal with our own versions of the Lotus-Eaters, like endless scrolling and procrastination, and the Sirens, like ego and unhealthy comparison. The Odyssey is a good reminder that growing up means learning to control your impulses, staying humble enough to start over, and remembering the people who keep you grounded.',
       comparativeSummary: {
         culturalContext: 'Archaic Greece (Homeric oral epic tradition, c. 8th century BCE)',
         primaryLenses: 'Archetypal & Psychological Criticism',
-        centralHumanConcern: 'Adaptive wisdom (metis), homecoming (nostos), humility, and intellectual partnership (homophrosyne)',
-        enduringInsight: 'True mastery lies not in conquering cities, but in governing one\'s own heart, resisting escapism, and returning humbly to rebuild meaningful relationships.'
+        centralHumanConcern: 'Practical intelligence (metis), coming home (nostos), humility, and equal partnership (homophrosyne)',
+        enduringInsight: 'Real strength is not about conquering cities, but about mastering your own temper, avoiding easy escapes, and coming home to the people you love.'
       }
     },
   {
@@ -126,13 +126,13 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       realmName: 'The Whirlwind',
       properTitle: 'The Book of Job',
       attribution: 'Anonymous Hebrew poet',
-      historicalContext: 'Ancient Near East, approximately sixth to fourth century BCE (dating remains a subject of scholarly debate)',
+      historicalContext: 'Ancient Near East, roughly sixth to fourth century BCE (exact dates are still debated by scholars)',
       civilizationRegion: 'Ancient Near East',
       monumentName: 'The Whirlwind of Uz',
       monumentDescription:
-        'A swirling sandstorm pillar rising from wind-swept ochre and sandstone formations around a small weathered altar, with delicate carved wooden wind ribbons spiraling upward.',
-      materialsUsed: 'Layered ochre sandstone, weathered walnut, muted gold, and sepia ink',
-      cartographicNote: 'Hic furit turbo super terram Uz • Where finite grief meets the untamed desert storm',
+        'A tall pillar of swirling desert sand rising above sandstone rocks and a small stone altar, with carved wooden wind ribbons spiraling into the air.',
+      materialsUsed: 'Ochre sandstone, weathered walnut, muted gold, and sepia ink',
+      cartographicNote: 'Hic furit turbo super terram Uz • Where honest grief meets the desert storm',
       bearingLabel: '315° NNW • 8 Leagues from Ithaca',
       compassAngleDeg: 315,
       coordinates: [-5.5, 0.2, -4.8],
@@ -141,51 +141,51 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       secondaryHex: '#D8B978',
       badgeColorClass: 'text-[#3B261A] border-[#A98545] bg-[#E6D6B5]',
       borderColorClass: 'border-[#A98545]',
-      shortEvocativeTagline: 'A swirling desert pillar over ancient Uz where honest grief confronts cosmic mystery.',
+      shortEvocativeTagline: 'A desert whirlwind over ancient Uz where honest grief questions why good people suffer.',
       contextualIntroduction:
-        'Set in the wind-scoured land of Uz, The Book of Job opens within the Ancient Near Eastern wisdom tradition only to dismantle its most comforting assumption: that prosperity always rewards virtue and catastrophe always indicts sin. Stripped of family, wealth, and bodily health, Job refuses the tidy orthodoxy of his three companions and demands an honest reckoning with the Almighty.',
+        'Set in the desert land of Uz, The Book of Job pushes back against a comforting belief that was common in the ancient world and still shows up today: the idea that good people are always rewarded with an easy life and that suffering is always a punishment for sin. After losing his children, his wealth, and his health, Job refuses to go along with his three friends\' neat explanations and demands an honest answer from God.',
       literaryLenses: ['Existential Criticism', 'Archetypal Criticism'],
       analyticalThesis:
-        'Through existential and archetypal lenses, The Book of Job exposes the bankruptcy of mechanical retributive justice, demonstrating that authentic faith and intellectual honesty require confronting suffering without reducing the universe to a human-centered moral transaction.',
+        'Read through existential and archetypal lenses, The Book of Job takes apart the idea that life works like a simple moral vending machine. It shows that real faith and honesty mean facing suffering directly instead of pretending the universe revolves around human scorekeeping.',
       analyticalSections: [
         {
-          heading: 'The Collapse of Retributive Orthodoxy and Job\'s Existential Protest',
+          heading: 'Why Job\'s Friends Are Wrong and Why Job Refuses to Lie',
           paragraphs: [
-            'In the poetic dialogues (Chapters 3 to 31), Eliphaz, Bildad, and Zophar defend a rigid theology of retributive justice: because God is just, suffering is proof of hidden transgression. Viewed through an existential lens, Job\'s companions represent the human impulse to preserve systemic certainty at the expense of lived truth. They would rather condemn an innocent friend than inhabit an unpredictable universe.',
-            'Job\'s greatness lies in his refusal to falsify his own conscience. Rather than offering a performative confession to appease his friends or bargain for recovery, he maintains his integrity ("Till I die I will not put away mine integrity from me," Job 27:5, KJV). His lamentations do not signal the absence of reverence; rather, his willingness to bring raw anguish and legal complaint directly before God becomes the highest form of spiritual authenticity.'
+            'Throughout the long debates in Chapters 3 to 31, Job\'s friends (Eliphaz, Bildad, and Zophar) stick to a simple formula: God is fair, so if Job is suffering, he must have done something wrong in secret. From an existential point of view, his friends care more about protecting their neat worldview than actually comforting a grieving friend. They would rather blame an innocent person than admit that life can be unpredictable and unfair.',
+            'What makes Job stand out is that he refuses to fake a confession just to make his friends happy or try to strike a deal with God ("Till I die I will not put away mine integrity from me," Job 27:5, KJV). His anger and grief are not signs of weak faith. In the end, God actually says Job spoke truthfully while his friends did not, showing that bringing raw, honest pain to God is better than repeating polite clichés.'
           ]
         },
         {
-          heading: 'The Divine Speeches (Chapters 38 to 41): From Moral Ledger to Cosmic Scale',
+          heading: 'God\'s Answer from the Whirlwind (Chapters 38 to 41)',
           paragraphs: [
-            'When the Lord finally answers Job out of the whirlwind (Chapters 38 to 41), the text executes a profound philosophical pivot. The voice from the tempest never mentions the heavenly wager of the prologue, nor does it catalog sins to justify Job\'s ordeal. Instead, the divine speeches unfold a breathtaking panorama of creation: the laying of the earth\'s foundations, the storehouses of snow and hail, the birthing of mountain goats, and the wild freedom of the wild ass.',
-            'By shifting the frame from a courtroom ledger to the vast architecture of the cosmos, the poem decenters anthropocentric morality. Creation is not a utilitarian stage built solely to reward or punish human behavior; it is a wild, intricate order where rain falls even "on the wilderness, wherein there is no man" (Job 38:26, KJV).'
+            'When God finally answers Job out of the storm in Chapters 38 to 41, the response is surprising. God never mentions the bet with the Accuser from the opening chapters, and He never gives Job a list of reasons for his suffering. Instead, God takes Job on a tour of the universe: the foundations of the earth, the storehouses of snow and hail, mountain goats giving birth, and wild donkeys running free.',
+            'By zooming out from Job\'s personal courtroom argument to the whole universe, the poem challenges the idea that creation only exists for human beings. The world is not a simple reward-and-punishment stage built around us; it is a huge, wild place where God sends rain even on empty desert land "wherein there is no man" (Job 38:26, KJV).'
           ]
         },
         {
-          heading: 'Behemoth, Leviathan, and the Archetype of Untamed Creation',
+          heading: 'Behemoth, Leviathan, and Living with Mystery',
           paragraphs: [
-            'The divine discourse culminates in the portraits of Behemoth and Leviathan (Chapters 40 to 41), primordial creatures of land and sea that defy human domestication. Under an archetypal reading, Behemoth and Leviathan embody the fierce, chaotic vitality woven into the fabric of existence. Neither beast is depicted as an evil mistake outside divine sovereignty; instead, Leviathan is celebrated as "a king over all the children of pride" (Job 41:34, KJV).',
-            'Job\'s final response in Chapter 42 is therefore not a humiliated surrender to tyranny, but a transformation from inherited rumor ("by the hearing of the ear") to direct cosmic encounter ("now mine eye seeth thee"). The Book of Job resists reducing suffering to a single moral lesson, leaving the reader with the humility required to live meaningfully amid mystery.'
+            'God\'s speech ends by describing Behemoth and Leviathan (Chapters 40 to 41), two massive creatures of the land and sea that no human can tame or put on a leash. As archetypes, these beasts represent the wild, untamed parts of nature. They are not mistakes in God\'s creation; God actually speaks of Leviathan with pride as "a king over all the children of pride" (Job 41:34, KJV).',
+            'When Job replies in Chapter 42, he is not just being bullied into silence. He says that before, he only knew God through secondhand rumors, "by the hearing of the ear," but now he has seen for himself. The book never hands us an easy answer for why bad things happen to good people, but it teaches the humility we need to keep living when life does not make sense.'
           ]
         }
       ],
       highlightedConcepts: [
         {
           term: 'Retributive Theology',
-          definition: 'The doctrine that earthly prosperity and suffering are direct, proportional payouts for moral virtue or sin.',
-          analyticalSignificance: 'Exposed as inadequate by Job\'s innocent suffering and explicitly rebuked when God tells Eliphaz that the friends "have not spoken of me the thing that is right, as my servant Job hath" (Job 42:7).'
+          definition: 'The belief that wealth and health are automatic rewards for being good, and that suffering is always direct payback for sin.',
+          analyticalSignificance: 'Job\'s innocent suffering proves this belief wrong, and God openly rejects the friends\' arguments in Job 42:7.'
         },
         {
           term: 'Theophany in the Whirlwind',
           originalScriptOrRoot: 'Se\'arah (Hebrew: סְעָרָה)',
-          definition: 'The manifestation of the divine voice from within a turbulent storm in Chapters 38 to 41.',
-          analyticalSignificance: 'Replaces abstract theological debate with direct sensory awe, shifting the inquiry from "Why do I suffer?" to "What is the human place within a vast, non-anthropocentric cosmos?"'
+          definition: 'God speaking directly out of a desert storm in Chapters 38 to 41.',
+          analyticalSignificance: 'Shifts the conversation from a narrow debate about rules to a much wider view of how vast and untamed the universe really is.'
         },
         {
           term: 'Behemoth & Leviathan',
-          definition: 'Monumental primeval beasts described at the climax of the divine speeches.',
-          analyticalSignificance: 'Archetypes of untamable cosmic power that exist beyond human utility, proving that order and wildness coexist within creation.'
+          definition: 'Two giant, untamable creatures described at the end of God\'s speeches.',
+          analyticalSignificance: 'They show that the world contains wild forces that do not exist to serve human beings, reminding Job that creation is bigger than human control.'
         }
       ],
       verifiedQuotes: [
@@ -204,21 +204,21 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           targetRealmId: 'mahabharata',
           targetWorkTitle: 'The Mahabharata',
-          connectionInsight: 'Both works confront moments where conventional moral rules fracture under extreme crisis, requiring a broader cosmic vision.'
+          connectionInsight: 'Both books look at painful moments where simple moral rules break down and characters have to face a much bigger reality.'
         },
         {
           targetRealmId: 'iliad',
           targetWorkTitle: 'The Iliad',
-          connectionInsight: 'Like Priam and Achilles weeping together in Book 24, Job confronts the inescapable vulnerability of mortal existence without false consolation.'
+          connectionInsight: 'Like Priam and Achilles crying together in Book 24, Job faces human grief honestly without hiding behind fake comfort.'
         }
       ],
       contemporaryReflection:
-        'In an era that often blames individuals for systemic misfortune or demands instant positivity in the face of grief, The Book of Job validates honest questioning. It reminds us that sitting truthfully with someone in pain is far more ethical than offering hollow platitudes.',
+        'People still have a habit of blaming victims for their bad luck or offering shallow "everything happens for a reason" advice when someone is hurting. The Book of Job shows that it is okay to ask hard questions when life falls apart, and that simply sitting with a friend in pain is much better than lecturing them.',
       comparativeSummary: {
         culturalContext: 'Ancient Near East (Hebrew Wisdom Literature, c. 6th to 4th century BCE)',
         primaryLenses: 'Existential & Archetypal Criticism',
-        centralHumanConcern: 'Innocent suffering, limits of retributive justice, and cosmic humility',
-        enduringInsight: 'Honest questioning is wiser than false orthodoxy; humanity inhabits a cosmos larger than our moral ledgers.'
+        centralHumanConcern: 'Why innocent people suffer, the limits of neat moral formulas, and humility',
+        enduringInsight: 'Honest doubt is more faithful than fake certainty, and the universe is much bigger than our human scorecards.'
       }
     },
   {
@@ -226,14 +226,14 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       romanNumeral: 'III',
       realmName: 'The Emerald Court',
       properTitle: 'The Panchatantra',
-      attribution: 'Traditionally associated with Vishnu Sharma; also transmitted across Persia, the Arab world, and Europe through traditions associated with Bidpai (Kalila wa-Dimna)',
-      historicalContext: 'Ancient India; oral roots and Sanskrit recensions span a debated period (often placed between ~300 BCE and 300 CE)',
+      attribution: 'Traditionally linked to Vishnu Sharma; later spread across Persia, the Arab world, and Europe as Kalila wa-Dimna (Bidpai)',
+      historicalContext: 'Ancient India; oral stories and Sanskrit versions developed roughly between 300 BCE and 300 CE',
       civilizationRegion: 'Ancient India',
       monumentName: 'The Emerald Banyan Court',
       monumentDescription:
-        'A tiered banyan-tree court with five interlocking carved wooden platforms, aerial roots, canopy branches, and miniature animal figures integrated into the architecture.',
-      materialsUsed: 'Carved walnut timber, muted moss green foliage, and aged brass',
-      cartographicNote: 'Silva Niti • Five tiered banyan courts of statecraft, animal counsel, and alliance',
+        'A five-level banyan tree court with carved wooden platforms, hanging roots, green branches, and small animal figures built into the tree.',
+      materialsUsed: 'Carved walnut wood, moss green foliage, and aged brass',
+      cartographicNote: 'Silva Niti • Five banyan platforms of politics, animal advice, and teamwork',
       bearingLabel: '045° NNE • 8 Leagues from Ithaca',
       compassAngleDeg: 45,
       coordinates: [5.5, 0.2, -4.8],
@@ -242,32 +242,32 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       secondaryHex: '#A98545',
       badgeColorClass: 'text-[#2C1E12] border-[#68704A] bg-[#DDE0CE]',
       borderColorClass: 'border-[#68704A]',
-      shortEvocativeTagline: 'A tiered banyan-tree court of five treatises on alliance, deception, and practical wisdom.',
+      shortEvocativeTagline: 'A five-tiered banyan tree where animal fables teach practical lessons on trust, politics, and teamwork.',
       contextualIntroduction:
-        'Framed as a royal curriculum devised by the scholar Vishnu Sharma to awaken the dull-witted sons of King Amarashakti within six months, The Panchatantra ("Five Treatises") is far more than a collection of charming animal tales. It is a rigorous manual of Niti-shastra: the wise conduct of life, diplomacy, alliance-building, and political survival.',
+        'The Panchatantra ("Five Treatises") starts with a clever setup: a teacher named Vishnu Sharma promises to teach three lazy princes how to rule wisely in just six months. Instead of making them memorize dry textbooks, he tells them animal stories. Underneath the talking lions and jackals, the book is a realistic guide to Niti-shastra, meaning practical wisdom, politics, and knowing who to trust.',
       literaryLenses: ['Structuralist / Narrative Criticism', 'Political-Pragmatic (Niti-shastra) Criticism'],
       analyticalThesis:
-        'Through its nested frame narratives and anthropomorphized courtly fauna, The Panchatantra operates as an unsentimental anatomy of power, demonstrating that security in public and personal life depends equally on guarding against rhetorical manipulation (Mitra-bheda) and cultivating reciprocal solidarity (Mitra-samprapti).',
+        'Using stories nested inside other stories and animals acting like royal advisors, The Panchatantra takes a realistic look at how power works. It shows that surviving in politics and everyday life requires two things: spotting manipulative people before they ruin your friendships (Mitra-bheda) and building loyal teams with people you can actually trust (Mitra-samprapti).',
       analyticalSections: [
         {
-          heading: 'Nested Frame Narratives as Cognitive Architecture',
+          heading: 'Stories Inside Stories: How the Frame Structure Works',
           paragraphs: [
-            'Structurally, The Panchatantra pioneers the "kathagarbha" (story-within-a-story) technique, where characters inside an outer narrative recite inner fables to justify a policy, warn an ally, or deceive a rival. This architectural nesting mirrors the complexity of real political deliberation: every action is interpreted through competing precedents, proverbs, and counter-narratives.',
-            'By casting lions, jackals, bulls, crows, and doves as courtiers and sovereigns, the text achieves critical distance. Anthropomorphism strips away individual vanity so the reader can observe the structural mechanics of ambition, flattery, paranoia, and trust with analytical clarity.'
+            'One of the coolest things about The Panchatantra is its "kathagarbha" or Russian-doll structure, where characters inside one story stop to tell another story to prove a point, warn a friend, or trick a rival. This setup matches how people argue in real life: everyone uses past examples and stories to justify what they want to do next.',
+            'Using animals like lions, jackals, bulls, crows, and doves also helps the reader step back and see human behavior clearly. Because they are animals in a forest court, it is easy to spot how flattery, ambition, fear, and gossip work without getting distracted by human excuses.'
           ]
         },
         {
-          heading: 'Mitra-bheda: Karataka, Damanaka, and the Anatomy of Manufactured Distrust',
+          heading: 'Mitra-bheda: How Damanaka Destroys a Friendship with Words',
           paragraphs: [
-            'The first and longest book, Mitra-bheda ("The Loss of Friends"), centers on the friendship between Pingalaka, the lion king, and Sanjivaka, a virtuous bull whose bellowing initially terrifies the monarch. Observing the king\'s fear and subsequent affection for Sanjivaka, two sidelined jackal ministers, Karataka and Damanaka, debate how to reclaim their influence at court.',
-            'While Karataka counsels caution against meddling in affairs beyond their station, the ambitious Damanaka weaponizes psychological insight and selective storytelling. By whispering symmetric suspicions to both the lion and the bull, Damanaka transforms mutual respect into lethal paranoia without ever lifting a weapon himself. The episode serves as a timeless warning about how unchecked ambition and sycophantic intermediaries corrode institutional trust from within.'
+            'The first and longest book, Mitra-bheda ("The Loss of Friends"), focuses on Pingalaka the lion king and his close friendship with Sanjivaka, a peaceful bull. Watching from the sidelines are two jackal ministers, Karataka and Damanaka, who feel ignored now that the king listens to the bull.',
+            'While Karataka advises staying out of trouble, the ambitious Damanaka decides to break up the friendship using only words. He goes back and forth between the lion and the bull, telling each one half-truths and fables until both friends are convinced the other is plotting to kill him. Damanaka never lifts a claw, yet he gets the lion to kill his best friend. It is a sharp warning about how easily a manipulator can ruin trust when leaders listen to gossip instead of checking the facts.'
           ]
         },
         {
-          heading: 'Mitra-samprapti: Strategic Cooperation and Collective Resilience',
+          heading: 'Mitra-samprapti: Why Teamwork Beats Strength',
           paragraphs: [
-            'Balancing the bleak realpolitik of Book I, the second treatise, Mitra-samprapti ("The Winning of Friends"), demonstrates how intelligence and genuine reciprocity enable the vulnerable to overcome superior force. When a flock of doves led by Chitragriva is snared in a fowler\'s net, they escape only by beating their wings in disciplined unison, carrying the net into the sky so their ally, the mouse Hiranyaka, can gnaw through their bonds.',
-            'Subsequent alliance between the crow Laghupatanaka, the mouse Hiranyaka, the tortoise Manthara, and the deer Chitranga illustrates that sustainable security arises not from wealth or brute strength, but from cross-disciplinary cooperation among discerning allies who recognize their shared vulnerability.'
+            'After the dark ending of Book I, the second book, Mitra-samprapti ("The Winning of Friends"), shows the flip side: how weak characters can survive when they work together. When a flock of doves led by Chitragriva gets caught in a hunter\'s net, they do not panic. They all flap their wings at the exact same time, lift the whole net into the air, and fly to their friend Hiranyaka the mouse, who chews through the ropes.',
+            'As the mouse, the crow, the tortoise, and the deer team up in the rest of Book II, their friendship proves that safety does not come from being the biggest animal in the jungle. It comes from having smart, reliable friends who look out for each other\'s weaknesses.'
           ]
         }
       ],
@@ -275,19 +275,19 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           term: 'Niti-shastra',
           originalScriptOrRoot: 'Nītiśāstra (Sanskrit: नीतिशास्त्र)',
-          definition: 'The science of wise conduct, pragmatic ethics, diplomacy, and statecraft.',
-          analyticalSignificance: 'Distinguishes The Panchatantra from moralistic children\'s fables; its goal is worldly discernment (prajna) and strategic survival in a competitive world.'
+          definition: 'Practical wisdom for everyday life, leadership, and dealing with people.',
+          analyticalSignificance: 'Shows that The Panchatantra is not just a bedtime storybook for kids; it was written to teach future leaders how to read people\'s motives and make smart decisions.'
         },
         {
           term: 'Mitra-bheda & Mitra-samprapti',
           originalScriptOrRoot: 'Sanskrit: मित्रभेद / मित्रसंप्राप्ति',
-          definition: 'Book I ("The Separation of Friends") and Book II ("The Winning of Friends").',
-          analyticalSignificance: 'Form a dialectical pair examining how alliances are destroyed through calculated disinformation (Damanaka) and forged through disciplined solidarity.'
+          definition: 'Book I ("The Loss of Friends") and Book II ("The Winning of Friends").',
+          analyticalSignificance: 'Placed side by side to contrast how relationships are torn apart by lies (Damanaka) and how they are built through real teamwork.'
         },
         {
-          term: 'Kathagarbha (Emboxed Narrative)',
-          definition: 'A nested structure in which characters within a story narrate sub-stories to persuade or mislead.',
-          analyticalSignificance: 'Demonstrates that language and storytelling are themselves instruments of power that can either illuminate truth or manufacture fatal illusion.'
+          term: 'Kathagarbha (Nested Stories)',
+          definition: 'A storytelling style where characters inside the main plot tell smaller stories inside it.',
+          analyticalSignificance: 'Shows that stories are tools of persuasion that can either teach good judgment or trick someone into making a huge mistake.'
         }
       ],
       verifiedQuotes: [
@@ -307,21 +307,21 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           targetRealmId: 'odyssey',
           targetWorkTitle: 'The Odyssey',
-          connectionInsight: 'Both celebrate cunning intelligence (Niti / Metis) and rhetorical adaptability as essential tools for surviving asymmetrical power.'
+          connectionInsight: 'Both books show that clever thinking (niti and metis) and self-control can beat opponents who are much stronger physically.'
         },
         {
           targetRealmId: 'roland',
           targetWorkTitle: 'The Song of Roland',
-          connectionInsight: 'Damanaka\'s courtly manipulation in Mitra-bheda parallels Ganelon\'s calculated diplomacy with Blancandrin to engineer Roland\'s downfall.'
+          connectionInsight: 'Damanaka\'s scheming in Book I works a lot like Ganelon\'s manipulation when he plots with King Marsile to trap Roland.'
         }
       ],
       contemporaryReflection:
-        'In an information ecosystem saturated with algorithmic outrage and persuasive rhetoric, Karataka and Damanaka read like modern media strategists. The Panchatantra trains us to inspect the incentives of whoever is telling the story before acting on second-hand suspicion.',
+        'With social media rumors and clickbait everywhere today, Karataka and Damanaka feel very familiar. The Panchatantra is a great reminder to always ask what someone has to gain before we believe their side of a story or turn against a friend.',
       comparativeSummary: {
-        culturalContext: 'Ancient India (Sanskrit Niti-shastra & global Bidpai transmission)',
+        culturalContext: 'Ancient India (Sanskrit Niti-shastra & global Bidpai tradition)',
         primaryLenses: 'Structuralist Narrative & Political-Pragmatic Criticism',
-        centralHumanConcern: 'Pragmatic wisdom, political survival, rhetoric, trust, and collective cooperation',
-        enduringInsight: 'Discernment requires recognizing how stories can be used to divide allies while building resilient networks of mutual trust.'
+        centralHumanConcern: 'Practical judgment, reading people\'s motives, trust, and teamwork',
+        enduringInsight: 'Good judgment means spotting how manipulative stories divide people while building honest friendships that can handle pressure.'
       }
     },
   {
@@ -329,14 +329,14 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       romanNumeral: 'IV',
       realmName: 'The Bridge to Lanka',
       properTitle: 'The Ramayana',
-      attribution: 'Traditionally attributed to the sage Valmiki (Adi Kavi)',
-      historicalContext: 'Ancient India; oral epic traditions and Sanskrit recensions developed across several centuries BCE to CE',
+      attribution: 'Traditionally attributed to the poet Valmiki (Adi Kavi)',
+      historicalContext: 'Ancient India; oral epic traditions and Sanskrit versions developed over several centuries BCE to CE',
       civilizationRegion: 'Ancient India',
       monumentName: 'The Sculpted Bridge to Lanka',
       monumentDescription:
-        'A carved stone bridge crossing a miniature sea channel with weathered stone arches, tiny sculpted trees, and a distant fortified citadel of Lanka with restrained golden details.',
-      materialsUsed: 'Warm sandstone, aged ivory, muted gold, and subdued moss green',
-      cartographicNote: 'Pons ad Lankam • The stone causeway of devotion crossing the southern strait',
+        'A carved stone bridge crossing a narrow sea channel with stone arches, small trees on the shore, and the walled city of Lanka in the distance.',
+      materialsUsed: 'Warm sandstone, aged ivory, muted gold, and moss green',
+      cartographicNote: 'Pons ad Lankam • The stone bridge built across the southern sea',
       bearingLabel: '090° E • 11 Leagues from Ithaca',
       compassAngleDeg: 90,
       coordinates: [11.0, 0.2, 0.0],
@@ -345,32 +345,32 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       secondaryHex: '#68704A',
       badgeColorClass: 'text-[#3B261A] border-[#A98545] bg-[#E8DAC0]',
       borderColorClass: 'border-[#A98545]',
-      shortEvocativeTagline: 'A carved stone bridge spanning the sea toward Lanka, evoking exile, devotion, and moral duty.',
+      shortEvocativeTagline: 'A stone bridge across the sea toward Lanka, built through loyalty, exile, and hard duty.',
       contextualIntroduction:
-        'Revered as the Adi-kavya ("First Poem") of Sanskrit literature, Valmiki\'s Ramayana traces Prince Rama\'s banishment from Ayodhya on the eve of his coronation, the abduction of Sita by the ten-headed monarch Ravana of Lanka, and the perilous campaign across the ocean to recover her. Beneath its mythic grandeur lies a searching inquiry into the cost of upholding righteous order.',
+        'Known in Sanskrit tradition as the Adi-kavya ("First Poem"), Valmiki\'s Ramayana tells the story of Prince Rama, who is sent into forest exile for fourteen years right before he is supposed to be crowned king. When his wife Sita is kidnapped by Ravana, the ten-headed king of Lanka, Rama teams up with Hanuman and the Vanara army to build a bridge across the sea and rescue her. At its heart, the epic asks what it really costs a person to follow their duty.',
       literaryLenses: ['Moral-Philosophical Criticism', 'Mythic-Archetypal Criticism'],
       analyticalThesis:
-        'Evaluated through moral-philosophical and mythic-archetypal criticism, The Ramayana illuminates both the nobility and the tragic tension of dharma, showing how Rama\'s commitment as Maryada Purushottama, Hanuman\'s selfless bhakti, Ravana\'s hubristic desire, and Sita\'s unyielding moral dignity expose the painful friction between public rule and intimate justice.',
+        'Read through moral-philosophical and mythic-archetypal lenses, The Ramayana shows both the beauty and the heartbreak of dharma. Through Rama\'s strict sense of duty, Hanuman\'s unselfish loyalty, Ravana\'s destructive pride, and Sita\'s quiet dignity, the poem explores what happens when a leader\'s public rules clash with fairness to the person he loves.',
       analyticalSections: [
         {
-          heading: 'Rama as Maryada Purushottama and the Ethics of the Fourteen-Year Exile',
+          heading: 'Rama\'s Fourteen-Year Exile and the Personal Cost of Dharma',
           paragraphs: [
-            'Rama is celebrated as Maryada Purushottama: the supreme upholder of moral boundaries and social order. When Queen Kaikeyi invokes King Dasharatha\'s ancient boons to demand Bharata\'s enthronement and Rama\'s fourteen-year forest exile, Rama accepts the decree with serene composure. For Rama, a father\'s and sovereign\'s spoken word (satya) is the foundational pillar of cosmic and civic stability.',
-            'Yet a rigorous moral-philosophical reading reveals that Valmiki does not present dharma as effortless or painless. Rama\'s obedience leaves Dasharatha heartbroken unto death, plunges Ayodhya into grief, and thrusts Bharata into the agonizing position of ruling as a reluctant regent beside Rama\'s sandals at Nandigrama. Duty in the Ramayana is noble precisely because it demands immense personal renunciation.'
+            'In Indian tradition, Rama is known as Maryada Purushottama, the ideal man who respects moral rules and keeps his promises no matter what. When Queen Kaikeyi cashes in two old promises from King Dasharatha to put her own son Bharata on the throne and send Rama into the forest for fourteen years, Rama accepts it calmly. To him, keeping his father\'s word is what holds family and society together.',
+            'Still, Valmiki does not pretend that following dharma is easy or painless. Rama\'s departure breaks his father\'s heart so badly that Dasharatha dies of grief, the whole city of Ayodhya mourns, and Bharata refuses to sit on the throne, placing Rama\'s sandals there instead. The story makes it clear that doing your duty often comes with a heavy personal price.'
           ]
         },
         {
-          heading: 'Ravana\'s Ego versus Hanuman\'s Bhakti: Two Polarities of Power',
+          heading: 'Ravana\'s Pride vs. Hanuman\'s Devotion: Two Ways of Using Power',
           paragraphs: [
-            'Mythic-archetypal criticism clarifies the contrast between Ravana and Hanuman. Ravana is no crude monster; he is a master of Vedic learning, music, and ascetic tapas whose fatal flaw is ahankara (egoistic pride) and kama (unbridled possessive desire). Believing himself invulnerable to gods and demons, he underestimates mortal human integrity and refuses the wise counsel of Vibhishana and Mandodari.',
-            'Conversely, Hanuman embodies immense strength wholly consecrated through bhakti (selfless devotion). Crossing the ocean to Lanka, leaping over despair, and carrying the mountain of healing herbs, Hanuman possesses matchless prowess yet claims zero personal aggrandizement. In the epic\'s moral universe, power detached from humility destroys golden Lanka, whereas power anchored in service becomes redemptive.'
+            'Looking at the characters as archetypes highlights the sharp contrast between Ravana and Hanuman. Ravana is not a mindless monster; he is a brilliant scholar and powerful king whose downfall is his own ego (ahankara) and selfish desire (kama). Because he thinks no god or demon can beat him, he ignores the warnings of his brother Vibhishana and his wife Mandodari and brings ruin to his own city.',
+            'Hanuman is the exact opposite. He has incredible strength, able to leap across the ocean to Lanka and carry an entire mountain of healing herbs, yet he never brags or uses his power for himself. Everything he does is out of bhakti, or loyal service to Rama and Sita. Through the two of them, the epic shows that power driven by ego destroys everything around it, while strength used to help others saves lives.'
           ]
         },
         {
-          heading: 'Sita\'s Resilience, Moral Autonomy, and the Tragic Weight of Public Duty',
+          heading: 'Sita\'s Strength and the Painful Clash Between Public Duty and Fairness',
           paragraphs: [
-            'Throughout her captivity in the Ashoka grove, Sita demonstrates extraordinary psychological and moral fortitude. Placing a single blade of grass between herself and Ravana, she relies on the strength of her own fidelity (satya and pativrata) rather than fear. However, the aftermath of the war exposes the sharpest ethical tension in the epic.',
-            'When Rama subjects Sita to the Agni Pariksha (trial by fire) after the fall of Lanka, and in the later tradition of the Uttara Kanda banishes her to withering public rumor despite knowing her innocence, the poem confronts an aching dilemma: the collision between the spotless public reputation required of an ideal monarch (raja-dharma) and the intimate justice owed to a blameless partner. Sita\'s final appeal to Mother Earth (Bhumi Devi) stands as an unforgettable assertion of uncompromised personal dignity.'
+            'While held prisoner in the Ashoka grove in Lanka, Sita shows incredible mental toughness. She places a single blade of grass between herself and Ravana as a boundary and refuses to give in to his threats or bribes. However, the hardest ethical question in the book comes after the war is won.',
+            'When Rama makes Sita walk through fire (Agni Pariksha) to prove her purity to the watching crowd, and in the later Uttara Kanda sends her into exile because of public gossip even though he knows she is innocent, the story hits a painful conflict. Rama\'s strict duty as a public role model (raja-dharma) collides with the basic fairness he owes his loyal wife. Sita\'s final choice to return to Mother Earth is a powerful stand for her own self-respect.'
           ]
         }
       ],
@@ -378,20 +378,20 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           term: 'Maryada Purushottama',
           originalScriptOrRoot: 'Sanskrit: मर्यादा पुरुषोत्तम',
-          definition: 'The ideal human being who embodies and honors supreme ethical boundaries and institutional duty.',
-          analyticalSignificance: 'Captures Rama\'s unwavering commitment to truth and royal obligation, while inviting reflection on the personal sacrifices demanded by perfection.'
+          definition: 'The ideal person who lives by strict moral rules, honor, and public duty.',
+          analyticalSignificance: 'Explains why Rama keeps his promises at all costs, while also making the reader think about the personal heartbreak that kind of perfection demands.'
         },
         {
           term: 'Bhakti (Devotional Service)',
           originalScriptOrRoot: 'Sanskrit: भक्ति',
-          definition: 'Selfless love, loyalty, and consecrated service toward a higher ideal or beloved lord.',
-          analyticalSignificance: 'Exemplified by Hanuman and Lakshmana, demonstrating how capability reaches its highest ethical expression when freed from ego.'
+          definition: 'Deep loyalty, love, and unselfish service to someone or something higher than yourself.',
+          analyticalSignificance: 'Best seen in Hanuman and Lakshmana, showing how great ability is at its best when it is not driven by ego.'
         },
         {
-          term: 'Agni Pariksha & Moral Tension',
+          term: 'Agni Pariksha (Trial by Fire)',
           originalScriptOrRoot: 'Sanskrit: अग्निपरीक्षा',
-          definition: 'Sita\'s ordeal by fire to silence public doubt following her captivity in Lanka.',
-          analyticalSignificance: 'Highlights the painful conflict between collective political appearances and personal ethical fairness.'
+          definition: 'Sita walking through fire after the battle of Lanka to silence public doubts about her faithfulness.',
+          analyticalSignificance: 'Brings out the hardest question in the epic: what happens when protecting a leader\'s public image hurts an innocent person?'
         }
       ],
       verifiedQuotes: [
@@ -411,21 +411,21 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           targetRealmId: 'mahabharata',
           targetWorkTitle: 'The Mahabharata',
-          connectionInsight: 'While the Ramayana explores the high cost of upholding ideal dharma, the Mahabharata plunges into situations where every available duty appears compromised.'
+          connectionInsight: 'While The Ramayana shows the cost of following ideal dharma, The Mahabharata looks at messy situations where every choice seems to break a rule.'
         },
         {
           targetRealmId: 'odyssey',
           targetWorkTitle: 'The Odyssey',
-          connectionInsight: 'Sita and Penelope both endure prolonged siege by arrogant suitors and captors through steadfastness, moral resolve, and intellectual dignity.'
+          connectionInsight: 'Both Sita and Penelope stay strong and outsmart the people pressuring them during long years of separation.'
         }
       ],
       contemporaryReflection:
-        'The Ramayana challenges modern leaders and citizens to ask what happens when institutional reputation conflicts with compassion toward an individual. It honors self-discipline and keeping one\'s word while reminding us never to ignore the human voice bearing the cost of public expectations.',
+        'The Ramayana makes us think about what happens when public expectations or institutional rules clash with treating an individual fairly. It respects self-control and keeping your word, but Sita\'s story also reminds us not to ignore the human cost when someone is judged by unfair public rumors.',
       comparativeSummary: {
         culturalContext: 'Ancient India (Sanskrit Adi-kavya tradition attributed to Valmiki)',
         primaryLenses: 'Moral-Philosophical & Mythic-Archetypal Criticism',
-        centralHumanConcern: 'Righteous duty (dharma), sacrifice, devotion (bhakti), and the cost of public perfection',
-        enduringInsight: 'Upholding ethical order requires extraordinary self-restraint, yet rigid adherence to public convention can create profound tension with personal justice.'
+        centralHumanConcern: 'Moral duty (dharma), keeping promises, unselfish loyalty (bhakti), and the cost of public image',
+        enduringInsight: 'Living by strong principles takes real discipline, but putting public appearances above a person\'s dignity creates a painful moral tension.'
       }
     },
   {
@@ -433,14 +433,14 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       romanNumeral: 'V',
       realmName: 'The Chariot of Kurukshetra',
       properTitle: 'The Mahabharata',
-      attribution: 'Traditionally associated with Krishna Dvaipayana Vyasa',
-      historicalContext: 'Ancient India; a monumental, layered Sanskrit composition developed across centuries (c. 400 BCE to 400 CE)',
+      attribution: 'Traditionally attributed to Krishna Dvaipayana Vyasa',
+      historicalContext: 'Ancient India; a massive Sanskrit epic built up over centuries (roughly 400 BCE to 400 CE)',
       civilizationRegion: 'Ancient India',
       monumentName: 'The Bronze Chariot of Kurukshetra',
       monumentDescription:
-        'An antique bronze miniature chariot with intricately carved wheels, reins, ornamental panels, and two sculpted horses positioned on a dusty battlefield surrounded by weathered standards.',
-      materialsUsed: 'Antique bronze, dark walnut timber, muted crimson banners, and dusty earth',
-      cartographicNote: 'Campus Kurukshetra • Between the two armies where Arjuna lowered his bow',
+        'A small bronze war chariot with spoked wheels, reins, carved side panels, and two horses standing on a dusty battlefield.',
+      materialsUsed: 'Antique bronze, dark walnut wood, crimson banners, and dusty earth',
+      cartographicNote: 'Campus Kurukshetra • Between the two armies where Arjuna put down his bow',
       bearingLabel: '135° SSE • 8 Leagues from Ithaca',
       compassAngleDeg: 135,
       coordinates: [5.5, 0.2, 4.8],
@@ -449,32 +449,32 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       secondaryHex: '#A98545',
       badgeColorClass: 'text-[#F4ECD8] border-[#873B35] bg-[#873B35]',
       borderColorClass: 'border-[#873B35]',
-      shortEvocativeTagline: 'A bronze chariot and carved wheel poised between two armies at the hour of moral crisis.',
+      shortEvocativeTagline: 'A bronze chariot stopped between two armies at a moment of impossible moral choice.',
       contextualIntroduction:
-        'Spanning roughly one hundred thousand couplets, The Mahabharata chronicles the fratricidal succession crisis between two branches of the Kuru dynasty: the five Pandava brothers and their hundred Kaurava cousins. At the threshold of the eighteen-day war at Kurukshetra, time seems to pause as the archer Arjuna drops his bow Gandiva between the two armies, initiating the philosophical dialogue of the Bhagavad Gita.',
+        'At around one hundred thousand verses, The Mahabharata tells the story of a bitter family feud over the throne between two sets of cousins: the five Pandava brothers and the hundred Kauravas. Right before the eighteen-day war begins at Kurukshetra, the great archer Arjuna looks across the field at his own relatives and teachers, drops his bow Gandiva, and asks his charioteer Krishna how fighting his own family could ever be right.',
       literaryLenses: ['Deontological Ethics', 'Psychological Criticism'],
       analyticalThesis:
-        'Examined through deontological ethics and psychological criticism, The Mahabharata confronts dharma-sankata (the agonizing collision of competing moral imperatives), demonstrating through Arjuna\'s crisis, Krishna\'s doctrine of Nishkama Karma, and Yudhishthira\'s final test of compassion that moral maturity requires acting without selfish attachment while remaining accountable to universal empathy.',
+        'Read through deontological ethics and psychological criticism, The Mahabharata looks at dharma-sankata, the painful trap where two moral duties directly clash. Through Arjuna\'s breakdown before the battle, Krishna\'s teaching on Nishkama Karma, and Yudhishthira\'s final test with a stray dog, the epic argues that real morality means doing your duty without selfish attachment while keeping compassion at the center.',
       analyticalSections: [
         {
-          heading: 'Dharma-sankata and Arjuna\'s Psychological Paralysis at Kurukshetra',
+          heading: 'Dharma-sankata: Why Arjuna Freezes Up at Kurukshetra',
           paragraphs: [
-            'The dynastic conflict between the Pandavas and Kauravas is driven by a chain of compromised choices: Dhritarashtra\'s blind paternal indulgence, Duryodhana\'s envy, Yudhishthira\'s catastrophic wagering in the dice game, and the public humiliation of Draupadi in the Kuru assembly. By the time the armies assemble at Kurukshetra, simple moral binaries have already eroded.',
-            'When Arjuna surveys the opposing ranks and sees his grandsire Bhishma, his revered teacher Drona, and his kinsmen, he suffers an acute psychological and ethical collapse (Bhagavad Gita, Chapter 1). His crisis is a classic dharma-sankata: his kshatriya-dharma (warrior duty to resist tyranny and restore just governance) directly clashes with kula-dharma (the sacred obligation to protect family and revere elders). Every path seems tainted by ruin.'
+            'The war between the Pandavas and Kauravas does not come out of nowhere. It builds up through years of bad choices: King Dhritarashtra letting his son Duryodhana get away with everything, Yudhishthira gambling away his kingdom in a rigged dice game, and Draupadi being humiliated in front of the royal court. By the time both armies line up at Kurukshetra, there are no easy answers left.',
+            'When Arjuna rides out between the two armies and sees his grandfather Bhishma, his teacher Drona, and his cousins on the other side, he panics and sits down in his chariot (Bhagavad Gita, Chapter 1). He is caught in a dharma-sankata, a situation where two duties cancel each other out. His duty as a warrior (kshatriya-dharma) tells him to fight for justice, while his duty to his family (kula-dharma) tells him never to kill his own relatives. Either way he turns, he feels like he is doing something wrong.'
           ]
         },
         {
-          heading: 'The Bhagavad Gita and the Deontology of Nishkama Karma',
+          heading: 'The Bhagavad Gita and Doing Your Duty Without Selfishness (Nishkama Karma)',
           paragraphs: [
-            'Serving as Arjuna\'s charioteer, Krishna addresses this paralysis in the Bhagavad Gita by redefining the relationship between action and bondage. From a deontological perspective, Krishna argues that true renunciation is not physical flight from responsibility (which in a crisis can mask fear or egoistic aversion), but internal detachment from personal gain.',
-            'Through the principle of Nishkama Karma (desireless or non-attached action), Krishna instructs Arjuna that human beings hold the right and obligation to perform their rightful duty (svadharma), but never to claim ownership over the fruits of action (Bhagavad Gita 2.47). Action becomes ethically purified when performed with equanimity (samatva) in war and peace, freed from malice, greed, and ego.'
+            'Krishna, who is serving as Arjuna\'s charioteer, answers his breakdown in the Bhagavad Gita by changing how we think about action. From an ethical standpoint, Krishna points out that simply running away from a hard responsibility does not make someone pure, especially when walking away lets injustice win.',
+            'Instead, Krishna teaches Nishkama Karma, which means doing your duty without obsessing over personal reward. In Bhagavad Gita 2.47, he tells Arjuna that we have a responsibility to do our work, but we do not own the results. When you act without greed, anger, or ego, you can face tough situations with a steady mind instead of freezing up.'
           ]
         },
         {
-          heading: 'The Aftermath of War and Yudhishthira\'s Final Test of Compassion',
+          heading: 'The Grief After the War and Yudhishthira\'s Stray Dog',
           paragraphs: [
-            'Crucially, The Mahabharata refuses to glamorize the war that follows. To defeat Bhishma, Drona, Karna, and Duryodhana, the victorious Pandavas resort to painful stratagems that leave their victory soaked in grief, culminating in the haunting lamentations of the Stri Parva (Book of the Women).',
-            'At the epic\'s close in the Mahaprasthanika Parva, King Yudhishthira walks alone to the threshold of heaven accompanied only by a stray dog. When Indra invites him to enter paradise on the condition that he abandon the ritually impure hound, Yudhishthira refuses to forsake a loyal creature seeking his protection. The dog reveals itself as Dharma incarnate: the final measure of righteousness is neither conquest nor ritual prestige, but unwavering compassion toward the vulnerable.'
+            'One thing I really respect about The Mahabharata is that it never makes war look glamorous. To beat Bhishma, Drona, Karna, and Duryodhana, the Pandavas end up bending the rules of fair combat, and their victory leaves almost everyone dead. In the Stri Parva (Book of the Women), the mothers and widows walk across the battlefield crying over the bodies, making the human cost impossible to ignore.',
+            'At the very end of the epic, King Yudhishthira walks up the mountains toward heaven with only a stray dog following him. When the god Indra tells him he can enter heaven only if he leaves the dog behind, Yudhishthira refuses to abandon a loyal animal that trusted him. The dog turns out to be Dharma in disguise. After thousands of pages of war and debate, the final test of goodness is simple kindness toward someone weak.'
           ]
         }
       ],
@@ -482,19 +482,19 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           term: 'Dharma-sankata',
           originalScriptOrRoot: 'Sanskrit: धर्मसंकट',
-          definition: 'A moral impasse in which two legitimate ethical obligations directly contradict each other.',
-          analyticalSignificance: 'Defines the tragic complexity of the Mahabharata, where characters must choose between family loyalty, personal vows, and public justice.'
+          definition: 'A moral dilemma where two real duties clash directly, so following one means breaking the other.',
+          analyticalSignificance: 'Drives the main conflicts in The Mahabharata, where characters constantly have to choose between family loyalty, personal promises, and public justice.'
         },
         {
           term: 'Nishkama Karma',
           originalScriptOrRoot: 'Sanskrit: निष्काम कर्म',
-          definition: 'Action performed steadfastly as duty without selfish attachment to personal reward or outcome.',
-          analyticalSignificance: 'Krishna\'s central ethical teaching in the Bhagavad Gita, resolving Arjuna\'s paralysis through inner equanimity rather than escapism.'
+          definition: 'Doing what needs to be done out of duty, without worrying about personal gain, fame, or payback.',
+          analyticalSignificance: 'Krishna\'s main advice in the Bhagavad Gita, helping Arjuna overcome his panic by focusing on honest effort rather than outcomes.'
         },
         {
           term: 'Dharma Sukshma (Subtle Ethics)',
-          definition: 'The recognition that righteousness is subtle, context-sensitive, and ultimately grounded in non-cruelty (anrishamsya).',
-          analyticalSignificance: 'Vindicated in Yudhishthira\'s final test with the stray dog at the gates of heaven.'
+          definition: 'The idea that right and wrong are often complicated in real life, and that non-cruelty (anrishamsya) matters most.',
+          analyticalSignificance: 'Proven at the gates of heaven when Yudhishthira refuses to trade a stray dog\'s loyalty for his own spot in paradise.'
         }
       ],
       verifiedQuotes: [
@@ -513,21 +513,21 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           targetRealmId: 'iliad',
           targetWorkTitle: 'The Iliad',
-          connectionInsight: 'Both epics depict monumental wars that expose the tragic cost of martial glory and conclude with a quiet triumph of empathy over wrath.'
+          connectionInsight: 'Both epics show how a huge war ruins the winners almost as much as the losers, and both end with a quiet moment of compassion.'
         },
         {
           targetRealmId: 'ramayana',
           targetWorkTitle: 'The Ramayana',
-          connectionInsight: 'Complements the Ramayana\'s portrait of steadfast duty by interrogating what happens when duties fracture against one another.'
+          connectionInsight: 'Where The Ramayana focuses on following an ideal code of duty, The Mahabharata asks what happens when your duties pull you in opposite directions.'
         }
       ],
       contemporaryReflection:
-        'Modern academic and professional life frequently confronts us with competing loyalties and burnout driven by obsession with external metrics. Nishkama Karma offers a resilient psychological discipline: commit wholly to the integrity of the work itself while detaching our self-worth from uncontrollable outcomes.',
+        'As students, it is easy to burn out when we tie all our self-worth to grades, rankings, or job offers. Krishna\'s idea of Nishkama Karma is a genuinely helpful mindset: put your best effort into the work right in front of you, and let go of the outcomes you cannot control.',
       comparativeSummary: {
         culturalContext: 'Ancient India (Sanskrit Itihasa & Bhagavad Gita tradition)',
         primaryLenses: 'Deontological Ethics & Psychological Criticism',
-        centralHumanConcern: 'Competing duties (dharma-sankata), moral paralysis, non-attached action, and universal compassion',
-        enduringInsight: 'When duties collide, ethical integrity lies in acting without egoistic attachment while holding compassion (anrishamsya) as the highest law.'
+        centralHumanConcern: 'Clashing duties (dharma-sankata), freezing under pressure, working without ego, and basic compassion',
+        enduringInsight: 'When duties clash, the right path is to act without selfish motives and never lose your compassion for the vulnerable.'
       }
     },
   {
@@ -536,13 +536,13 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       realmName: 'The Citadel of Troy',
       properTitle: 'The Iliad',
       attribution: 'Homer (according to traditional attribution)',
-      historicalContext: 'Archaic Greece, approximately the eighth century BCE, drawing upon centuries of oral Bronze Age heroic song',
+      historicalContext: 'Archaic Greece, around the eighth century BCE, passed down from older Bronze Age oral songs',
       civilizationRegion: 'Archaic Greece',
       monumentName: 'The Walled Citadel of Troy',
       monumentDescription:
-        'A walled miniature Trojan acropolis with layered limestone fortifications, watchtowers, narrow Scaean gates, and a weathered bronze Shield of Achilles mounted prominently near the entrance.',
-      materialsUsed: 'Warm limestone, antique bronze, aged timber, and restrained crimson',
-      cartographicNote: 'Ilium Troia • The wind-swept ramparts and Scaean Gate above the Scamander plain',
+        'A small walled city of Troy with limestone walls, watchtowers, the Scaean Gates, and a bronze Shield of Achilles resting near the entrance.',
+      materialsUsed: 'Warm limestone, antique bronze, aged wood, and muted crimson',
+      cartographicNote: 'Ilium Troia • The windy walls and Scaean Gate above the Trojan plain',
       bearingLabel: '225° SSW • 8 Leagues from Ithaca',
       compassAngleDeg: 225,
       coordinates: [-5.5, 0.2, 4.8],
@@ -551,52 +551,52 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       secondaryHex: '#873B35',
       badgeColorClass: 'text-[#3B261A] border-[#8E8575] bg-[#E2D9C5]',
       borderColorClass: 'border-[#8E8575]',
-      shortEvocativeTagline: 'Layered limestone ramparts and a forged bronze shield where wrath yields to shared mortal tears.',
+      shortEvocativeTagline: 'Stone city walls and a bronze shield where a warrior\'s rage finally gives way to shared grief.',
       contextualIntroduction:
-        'Spanning only a few weeks in the tenth year of the Trojan War, Homer\'s Iliad does not celebrate a triumphalist conquest. Its first word is menis, the ruinous, godlike wrath of Achilles sparked by Agamemnon\'s seizure of his prize of honor, and its arc traces how the pursuit of immortal glory (kleos) devastates both Achaeans and Trojans until grief restores their shared humanity.',
+        'Covering just a few weeks in the tenth year of the Trojan War, Homer\'s Iliad is not a cheerful victory story. Its very first word is menis, the destructive rage of Achilles after King Agamemnon takes away his war prize. From there, the poem shows how chasing battlefield fame (kleos) wrecks both the Greeks and the Trojans, until two grieving men finally sit down and cry together.',
       literaryLenses: ['Tragic-Heroic Criticism', 'Humanist Criticism'],
       analyticalThesis:
-        'Through tragic-heroic and humanist criticism, The Iliad deconstructs the heroic code from within, revealing how the relentless pursuit of timê (public honor) and kleos (imperishable glory) fuels destructive menis, while domestic moments like Hector and Andromache\'s farewell and Priam\'s nocturnal supplication to Achilles in Book 24 establish shared mortal vulnerability as the poem\'s deepest truth.',
+        'Looking at The Iliad through tragic-heroic and humanist criticism shows how the warrior code ends up destroying the very people who live by it. Chasing public status (timê) and lasting fame (kleos) feeds Achilles\' uncontrollable rage, while scenes like Hector saying goodbye to his wife and child and King Priam begging Achilles for his son\'s body show that shared human grief matters more than glory.',
       analyticalSections: [
         {
-          heading: 'Menis, Timê, and Kleos: The Tragic Contradiction of the Heroic Code',
+          heading: 'Menis, Timê, and Kleos: The Trap of the Warrior Code',
           paragraphs: [
-            'In the world of the Homeric warrior, mortality is inescapable; the only compensation for a brief life is timê (tangible status and esteem granted by peers) and kleos aphthiton (imperishable renown preserved in song). When Agamemnon strips Achilles of Briseis in Book 1, he shatters the social contract of the heroic code: why risk death at Troy if tangible honor is arbitrarily confiscated?',
-            'Yet Achilles\' subsequent withdrawal and wrath (menis) initiate a tragic chain reaction. By praying for Achaean defeat to prove his worth, Achilles inadvertently causes the death of his beloved companion Patroclus at Hector\'s hands in Book 16. When Achilles returns to battle in Book 18, his rage transcends human bounds, choking the river Scamander with corpses and dragging Hector\'s body around Patroclus\' tomb, demonstrating that unchecked wrath consumes the very humanity of the hero.'
+            'For the warriors in Homer\'s world, human life is short, and the only thing that lasts after death is timê (the public respect and prizes you win from other fighters) and kleos (the fame that lives on in songs). When Agamemnon takes Briseis away from Achilles in Book 1, it breaks the basic bargain of their world: why should Achilles die young at Troy if his honor can be taken away on a whim?',
+            'Still, Achilles\' reaction makes everything worse. By pulling out of the war and praying for his own Greek teammates to get slaughtered so they will beg him to come back, Achilles ends up causing the death of his best friend Patroclus in Book 16. When he returns to fight in Book 18, his anger is so out of control that he clogs the river with dead bodies and drags Hector\'s corpse behind his chariot for days. His rage costs him his own humanity.'
           ]
         },
         {
-          heading: 'Hector and Andromache: The Domestic Cost of Martial Glory',
+          heading: 'Hector and Andromache: What War Costs a Family (Book 6)',
           paragraphs: [
-            'Against the bronze clangor of the plain, Homer places the luminous tragedy of Troy\'s interior in Book 6. When Hector meets his wife Andromache and their infant son Astyanax at the Scaean Gates, Andromache pleads with him to fight defensively from the walls rather than make her a widow and their child an orphan.',
-            'Hector\'s reply exposes the agonizing bind of the defender: though he foresees the fall of Ilium and grieves more for Andromache\'s future captivity than for his own brothers or parents, shame before the Trojan men and women compels him to return to the front ranks. Andromache\'s "smiling through her tears" (dakruoen gelasasa) when Hector removes his terrifying horsehair-crested helmet to embrace his frightened infant encapsulates everything war is about to extinguish.'
+            'Away from the fighting on the plain, Book 6 takes us inside the walls of Troy to show what is actually at stake. When Hector meets his wife Andromache and their baby son Astyanax by the Scaean Gates, Andromache begs him to stay inside the walls and guard the city instead of getting himself killed and leaving them alone.',
+            'Hector\'s answer shows how trapped he feels. He already knows Troy is going to fall, and he says the thought of Andromache being dragged off into slavery hurts him more than anything else, yet he still goes back out because he is ashamed of looking like a coward in front of the other Trojans. The moment where baby Astyanax starts crying because he is scared of his father\'s giant bronze helmet, and Hector takes the helmet off and laughs with Andromache through their tears, makes the coming destruction of their family heartbreaking.'
           ]
         },
         {
-          heading: 'Priam and Achilles in Book 24: Recognition Through Shared Grief',
+          heading: 'Priam and Achilles in Book 24: Seeing Yourself in an Enemy',
           paragraphs: [
-            'The moral climax of The Iliad arrives not on the battlefield, but inside Achilles\' shelter at night in Book 24. Aged King Priam enters the enemy camp unseen and performs an unthinkable act of courage and humility: kneeling to kiss the "terrible, man-slaughtering hands" that killed so many of his sons.',
-            'Invoking Achilles\' own aging father, Peleus, Priam awakens a profound recognition in the Greek hero. As Priam weeps for Hector at Achilles\' feet and Achilles weeps first for his father and then for Patroclus, their shared lamentation dissolves the boundary between Greek and Trojan, victor and vanquished. By returning Hector\'s body and granting a twelve-day truce for his funeral, Achilles recovers his humanity not through conquest, but through radical empathy for mortal suffering.'
+            'The real turning point of The Iliad does not happen on the battlefield. It happens late at night inside Achilles\' tent in Book 24. Old King Priam sneaks into the Greek camp alone, kneels down in front of Achilles, and kisses the hands of the man who killed his sons.',
+            'Priam asks Achilles to think of his own aging father, Peleus, waiting back home. That comparison breaks through Achilles\' anger. Priam cries for Hector at Achilles\' feet, and Achilles cries for his own father and for Patroclus. For a moment, they are no longer Greek and Trojan or winner and loser; they are just two grieving men who know everyone dies. By giving Hector\'s body back and calling a twelve-day truce for the funeral, Achilles finally finds his humanity again.'
           ]
         }
       ],
       highlightedConcepts: [
         {
-          term: 'Menis (Godlike Wrath)',
+          term: 'Menis (Destructive Wrath)',
           originalScriptOrRoot: 'Greek: μῆνις',
-          definition: 'Cosmic, consuming rage normally reserved for the gods when a sacred order is violated.',
-          analyticalSignificance: 'The very first word of the epic; tracks Achilles\' alienation from human community until his reconciliation with Priam in Book 24.'
+          definition: 'An overwhelming, godlike rage that burns out of control when someone\'s honor is insulted.',
+          analyticalSignificance: 'The opening word of The Iliad; it follows Achilles as he cuts himself off from everyone else until he finally lets his anger go with Priam in Book 24.'
         },
         {
           term: 'Timê & Kleos',
           originalScriptOrRoot: 'Greek: τιμή / κλέος',
-          definition: 'Tangible public honor and esteem (timê) and imperishable glory sung after death (kleos).',
-          analyticalSignificance: 'The twin engines of the heroic code that drive warriors toward greatness while exacting an unbearable human cost on families and cities.'
+          definition: 'Public respect and war prizes (timê), and the famous name that lives on in song after a warrior dies (kleos).',
+          analyticalSignificance: 'These two goals push warriors to fight bravely, but they also trap men like Achilles and Hector into choosing pride over the people they love.'
         },
         {
           term: 'The Shield of Achilles (Book 18)',
-          definition: 'Hephaestus\' forged bronze shield depicting the cosmos, harvests, weddings, dances, law courts, and war.',
-          analyticalSignificance: 'An ekphrastic microcosm placing the siege of Troy inside the much wider world of peaceful human civilization being sacrificed to war.'
+          definition: 'The bronze shield made by the god Hephaestus, decorated with scenes of stars, farming, weddings, dancing, law courts, and war.',
+          analyticalSignificance: 'Shows the whole wide world of normal, peaceful life right on the shield Achilles carries into battle, reminding us of everything war destroys.'
         }
       ],
       verifiedQuotes: [
@@ -615,21 +615,21 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           targetRealmId: 'odyssey',
           targetWorkTitle: 'The Odyssey',
-          connectionInsight: 'Where The Iliad examines the tragic cost of dying young for kleos at Troy, The Odyssey explores the arduous wisdom required to survive and return home (nostos).'
+          connectionInsight: 'While The Iliad shows the tragedy of dying young for fame at Troy, The Odyssey focuses on the patience needed to survive and make it back home.'
         },
         {
           targetRealmId: 'roland',
           targetWorkTitle: 'The Song of Roland',
-          connectionInsight: 'Achilles\' fierce preoccupation with honor anticipates Roland\'s refusal to blow the Oliphant lest his lineage and reputation be shamed.'
+          connectionInsight: 'Achilles\' obsession with his personal honor and Hector\'s fear of public shame look a lot like Roland refusing to blow his horn to call for help.'
         }
       ],
       contemporaryReflection:
-        'In a world polarized by tribal hostilities that dehumanize adversaries, Book 24 of The Iliad remains one of humanity\'s greatest moral touchstones. Seeing one\'s own parent or child in the grief of an opponent is the foundation of peace and ethical restraint.',
+        'When people get divided into angry camps and stop seeing the other side as human, Book 24 of The Iliad still hits hard. Being able to look at an opponent and see someone\'s parent or someone\'s child is where real empathy starts.',
       comparativeSummary: {
         culturalContext: 'Archaic Greece (Homeric oral epic tradition, c. 8th century BCE)',
         primaryLenses: 'Tragic-Heroic & Humanist Criticism',
-        centralHumanConcern: 'Wrath (menis), heroic honor (timê/kleos), domestic loss, and shared mortal vulnerability',
-        enduringInsight: 'No quest for glory erases our shared mortality; true nobility emerges when enemies recognize each other\'s grief.'
+        centralHumanConcern: 'Rage (menis), warrior pride (timê and kleos), family loss, and shared human grief',
+        enduringInsight: 'No amount of fame can erase death; our best moments come when we recognize our own grief in our enemies.'
       }
     },
   {
@@ -637,14 +637,14 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       romanNumeral: 'VII',
       realmName: 'The Pass of Roncevaux',
       properTitle: 'The Song of Roland',
-      attribution: 'Anonymous Anglo-Norman poet; associated with "Turoldus" named in the final line of the Oxford manuscript (Bodleian Library MS Digby 23)',
-      historicalContext: 'Medieval France / Anglo-Norman realm, approximately late eleventh to early twelfth century (transforming the historical 778 CE Battle of Roncevaux Pass into crusading legend)',
+      attribution: 'Anonymous Anglo-Norman poet; linked to "Turoldus" named at the end of the Oxford manuscript (Bodleian Library MS Digby 23)',
+      historicalContext: 'Medieval France and England, late eleventh to early twelfth century (turning the 778 CE Battle of Roncevaux Pass into a First Crusade legend)',
       civilizationRegion: 'Medieval Europe',
       monumentName: 'The Pass of Roncevaux',
       monumentDescription:
-        'A rugged Pyrenean mountain defile with steep rocky slopes, a narrow winding route, a carved stone watchtower, an ivory Oliphant horn displayed near the path, and the weathered sword Durendal.',
-      materialsUsed: 'Weathered Pyrenean slate, carved ivory, aged steel, dark timber, and sealing-wax crimson',
-      cartographicNote: 'Saltus Roncevallis • The narrow Pyrenean defile of the Oliphant and Durendal',
+        'A steep mountain pass in the Pyrenees with rocky cliffs, a narrow winding trail, a stone watchtower, an ivory Oliphant horn, and the sword Durendal.',
+      materialsUsed: 'Pyrenean slate, carved ivory, aged steel, dark wood, and sealing-wax crimson',
+      cartographicNote: 'Saltus Roncevallis • The narrow mountain pass of the Oliphant horn and Durendal',
       bearingLabel: '270° W • 11 Leagues from Ithaca',
       compassAngleDeg: 270,
       coordinates: [-11.0, 0.2, 0.0],
@@ -653,32 +653,32 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
       secondaryHex: '#8E8575',
       badgeColorClass: 'text-[#F4ECD8] border-[#873B35] bg-[#6E2B25]',
       borderColorClass: 'border-[#873B35]',
-      shortEvocativeTagline: 'A solemn Pyrenean pass where an ivory horn and weathered blade mark the divide between valor and prudence.',
+      shortEvocativeTagline: 'A narrow mountain pass where an ivory horn and a knight\'s sword show the line between bravery and reckless pride.',
       contextualIntroduction:
-        'The oldest surviving masterpiece of French epic poetry (chanson de geste), The Song of Roland mythologizes the ambush of Charlemagne\'s rearguard in the Pyrenean defile of Roncevaux. Written during the era of the First Crusade, the poem crystallizes the medieval feudal ethos while staging a devastating debate over where heroic valor ends and reckless pride begins.',
+        'The oldest surviving major work of French literature, The Song of Roland tells the story of how Charlemagne\'s rearguard gets ambushed in the mountain pass of Roncevaux. Written around the time of the First Crusade, the poem celebrates medieval knighthood, but it also asks a tough question: where is the line between brave leadership and foolish pride?',
       literaryLenses: ['Historical-Cultural Criticism', 'Chivalric / Ethical Criticism'],
       analyticalThesis:
-        'Analyzed through historical-cultural and chivalric criticism, The Song of Roland exposes the structural fragility of feudal honor: Ganelon\'s private vendetta corrupts public allegiance into treason, while the clash between Roland\'s fierce prouesse (prowess) and Oliver\'s lucid mesure (prudent moderation) demonstrates how pride untempered by collective responsibility turns noble courage into preventable catastrophe.',
+        'Read through historical-cultural and chivalric criticism, The Song of Roland shows the weak spots in the medieval code of honor. Ganelon lets a personal grudge turn into treason against his king, while the argument between the reckless Roland (prouesse) and the sensible Oliver (mesure) shows how a leader\'s ego can get his whole team killed.',
       analyticalSections: [
         {
-          heading: 'Feudal Loyalty and Ganelon\'s Treason: Private Grievance vs. Public Bond',
+          heading: 'Feudal Loyalty and Ganelon\'s Betrayal: Personal Grudge vs. Public Duty',
           paragraphs: [
-            'In the eleventh-century feudal order, social stability depended on mutual vassalage: a lord owed protection and just counsel, while a vassal owed absolute fidelity on the battlefield. When Roland nominates his stepfather Ganelon for the perilous embassy to King Marsile of Saragossa, Ganelon interprets the nomination as a calculated death sentence aimed at seizing his lands and honor.',
-            'Historically, Ganelon\'s defense at his final trial hinges on the claim that he issued a formal, public defiance (desfiance) to Roland and the Twelve Peers, framing his plot with Marsile as a legitimate private blood-feud rather than treason against Charlemagne. Through Thierry\'s victory over Pinabel in judicial combat, the poem marks a crucial historical transition: in service to the Christian sovereign, a private vendetta against the king\'s rearguard is condemned as high treason against the realm.'
+            'In eleventh-century feudal society, everything depended on loyalty between a lord and his knights. When Roland volunteers his stepfather Ganelon for a dangerous mission to King Marsile in Saragossa, Ganelon is furious and convinces himself that Roland is trying to get him killed so he can take his lands.',
+            'At his trial at the end of the poem, Ganelon argues that he did not commit treason against Charlemagne because he openly challenged Roland and his men first, making it a legal private feud. When Charlemagne\'s champion Thierry defeats Ganelon\'s relative Pinabel in trial by combat, the poem makes a clear historical point: a personal grudge cannot be used as an excuse to betray your country\'s army.'
           ]
         },
         {
-          heading: 'Prouesse versus Mesure: "Roland Is Fierce and Oliver Is Wise"',
+          heading: 'Prouesse vs. Mesure: "Roland Is Fierce and Oliver Is Wise"',
           paragraphs: [
-            'At the heart of Roncevaux stands line 1093 of the poem: "Rollant est proz e Oliver est sage" ("Roland is fierce/valiant and Oliver is wise"). Both counts are exemplars of chivalric courage, yet they embody two distinct ethical poles. When Oliver climbs a pine-clad hill and sees the overwhelming Saracen host glinting in the pass, he three times urges Roland to blow his ivory horn, the Oliphant, so Charlemagne\'s main army can turn back to save the rearguard.',
-            'Roland three times refuses. Consumed by fear that blowing the horn would bring shame upon his kinsmen ("malvaise essample") and tarnish sweet France\'s renown, Roland equates requesting aid with cowardice. Oliver\'s mesure recognizes that a commander\'s highest obligation is the preservation of his twenty thousand men and the king\'s strategic interest; Roland\'s untempered prouesse prioritizes personal reputation until the rearguard is decimated.'
+            'The most famous line in the poem is line 1093: "Rollant est proz e Oliver est sage" ("Roland is fierce and Oliver is wise"). Both men are brave knights, but they think about leadership in completely different ways. When Oliver climbs a hill and sees a massive enemy army waiting to ambush them in the pass, he asks Roland three times to blow his ivory horn, the Oliphant, so Charlemagne can turn the main army around and save them.',
+            'Three times, Roland says no. He is so worried that calling for help will embarrass his family name and make people think he is a coward that he refuses to sound the horn. Oliver has mesure, meaning common sense and a focus on keeping their twenty thousand men alive. Roland has prouesse, raw bravery, but because he cares more about his personal reputation than his men\'s lives, the rearguard walks straight into a slaughter.'
           ]
         },
         {
-          heading: 'The Blowing of the Oliphant and Penitent Martyrdom',
+          heading: 'Blowing the Oliphant Too Late and Roland\'s Last Stand',
           paragraphs: [
-            'When fewer than sixty Franks remain standing, Roland finally proposes blowing the Oliphant. Now it is Oliver who rebukes him in one of medieval literature\'s sharpest critiques: "Vassalage by sense is not folly; / Measure is worth more than recklessness. / Frenchmen are dead because of your lightness" (Laisse 131). Only Archbishop Turpin\'s intervention bridges their estrangement, reminding them that the horn cannot save their lives now, but will summon Charlemagne to avenge them and give their bodies Christian burial.',
-            'Roland blows the Oliphant with such heroic agony that his temples burst and blood streams from his mouth. Turning his face toward Spain on a hill beneath a pine tree, attempting in vain to shatter his holy sword Durendal on dark stone lest it fall to an unworthy hand, and offering his right-hand glove to God as a feudal vassal to his heavenly Liege, Roland achieves penitent martyrdom, yet the poem never erases the tragic human cost of his earlier refusal of wise counsel.'
+            'When only sixty Franks are left alive, Roland finally says he will blow the Oliphant. At that point, Oliver snaps at him in one of the sharpest lines in the book: "Courage with sense is not foolishness; moderation is worth more than recklessness. Frenchmen are dead because of your carelessness" (Laisse 131). Archbishop Turpin has to step in and remind them that while the horn cannot save their lives anymore, blowing it will bring Charlemagne back to bury their bodies and avenge them.',
+            'Roland blows the horn so hard that his temples burst. Before dying under a pine tree facing Spain, he tries to break his sword Durendal on a rock so the enemy cannot take it, and holds up his glove to God like a loyal knight. He dies as a martyr, yet the poem never hides the fact that twenty thousand men died because he was too proud to listen to his best friend earlier.'
           ]
         }
       ],
@@ -686,18 +686,18 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           term: 'Prouesse & Mesure',
           originalScriptOrRoot: 'Old French: Prouesse / Mesure',
-          definition: 'Fierce martial valor (prouesse) balanced against prudent judgment, proportion, and self-restraint (mesure).',
-          analyticalSignificance: 'Encapsulated in "Roland is fierce and Oliver is wise" (line 1093); shows that valor without prudence destroys those a leader is sworn to protect.'
+          definition: 'Fierce battlefield bravery (prouesse) balanced against common sense, self-control, and good judgment (mesure).',
+          analyticalSignificance: 'Summed up in "Roland is fierce and Oliver is wise" (line 1093), showing that bravery without common sense gets the people you lead hurt.'
         },
         {
           term: 'The Oliphant & Durendal',
-          definition: 'Roland\'s carved ivory war-horn and his relic-filled, indestructible sword.',
-          analyticalSignificance: 'Twin symbols of chivalric identity: the horn represents communal solidarity and communication with Charlemagne, while the sword represents individual martial prowess.'
+          definition: 'Roland\'s carved ivory war horn and his unbreakable sword filled with holy relics.',
+          analyticalSignificance: 'The horn stands for teamwork and calling on Charlemagne for help, while the sword stands for Roland\'s individual fighting skill.'
         },
         {
           term: 'Feudal Vassalage & Desfiance',
-          definition: 'The sacred bond of reciprocal loyalty between lord and vassal, contrasted with Ganelon\'s formal declaration of private feud.',
-          analyticalSignificance: 'Illustrates the medieval shift from fractured clan vendettas toward centralized loyalty to the realm.'
+          definition: 'The sworn bond of loyalty between a king and his knights, contrasted with Ganelon\'s claim of a private feud.',
+          analyticalSignificance: 'Reflects how medieval Europe was moving away from private family blood-feuds toward loyalty to a single king and country.'
         }
       ],
       verifiedQuotes: [
@@ -716,21 +716,21 @@ export const LITERARY_REALMS: LiteraryRealm[] = [
         {
           targetRealmId: 'iliad',
           targetWorkTitle: 'The Iliad',
-          connectionInsight: 'Roland\'s dread of shame before his peers directly echoes Hector\'s dilemma at the Scaean Gates and Achilles\' preoccupation with kleos.'
+          connectionInsight: 'Roland\'s fear of looking weak in front of his peers is just like Hector at the Scaean Gates and Achilles obsessing over his honor.'
         },
         {
           targetRealmId: 'odyssey',
           targetWorkTitle: 'The Odyssey',
-          connectionInsight: 'Oliver\'s call for mesure aligns with Odyssean metis, whereas Roland\'s refusal to blow the horn mirrors Odysseus\' rash boast to the Cyclops.'
+          connectionInsight: 'Oliver\'s practical common sense (mesure) matches Odysseus\' smarts (metis), while Roland\'s stubborn pride is like Odysseus bragging to the Cyclops.'
         }
       ],
       contemporaryReflection:
-        'In leadership, medicine, engineering, and teamwork, "Roland\'s pride" remains a dangerous failure mode: refusing to ask for help or escalate a problem early because of ego. Oliver\'s principle of mesure reminds us that true responsibility means placing the safety of the team above the appearance of self-sufficiency.',
+        'In school projects, software engineering, and leadership, "Roland\'s pride" is still a common problem: refusing to ask for help or admit a mistake early because of ego. Oliver\'s idea of mesure is a practical reminder that a good leader cares more about protecting the team than looking tough.',
       comparativeSummary: {
         culturalContext: 'Medieval Europe (Anglo-Norman Chanson de geste, c. 11th to 12th century)',
         primaryLenses: 'Historical-Cultural & Chivalric Criticism',
-        centralHumanConcern: 'Feudal loyalty, treason, personal honor (prouesse) vs. prudent responsibility (mesure)',
-        enduringInsight: 'Courage untempered by wise counsel (mesure) endangers the community; true honor serves collective responsibility rather than personal vanity.'
+        centralHumanConcern: 'Loyalty, betrayal, personal pride (prouesse) vs. practical common sense (mesure)',
+        enduringInsight: 'Bravery without good judgment puts everyone around you in danger; real honor means putting the team ahead of your ego.'
       }
     }
 ];
@@ -745,30 +745,30 @@ export const REALM_MAP: Record<RealmId, LiteraryRealm> = LITERARY_REALMS.reduce(
 
 export const ODYSSEY_SPOTLIGHT_DATA = {
   title: 'The Odyssey',
-  attribution: 'Homer (Archaic Greece, approximately the eighth century BCE)',
-  monumentTitle: 'The Harbor of Ithaca: Heart of the Navigator\'s Chart',
+  attribution: 'Homer (Archaic Greece, around the eighth century BCE)',
+  monumentTitle: 'The Harbor of Ithaca: Center of the Navigator\'s Chart',
   overview:
-    'Composed in dactylic hexameter at the dawn of Archaic Greek literature, The Odyssey recounts the ten-year homeward voyage of Odysseus following the ten-year siege of Troy, interwoven with his son Telemachus\' coming-of-age search for his father and Penelope\'s twenty-year defense of their household on Ithaca. Unlike epics that conclude at the moment of military triumph, The Odyssey asks what happens after the citadel falls: how a human mind weathered by trauma, temptation, and displacement finds its way back to domestic peace, humility, and reciprocal love.',
+    'Homer\'s Odyssey tells the story of Odysseus\' ten-year struggle to get home after the Trojan War, while his son Telemachus searches for him and his wife Penelope holds their home together on Ithaca. Unlike stories that end right after the big battle is won, The Odyssey asks what happens afterward: how a person worn down by war, mistakes, and long years away finds his way back to normal life, humility, and family.',
   importantCharacters: [
     {
       name: 'Odysseus (Polytropos)',
-      role: 'King of Ithaca & Voyager',
-      insight: 'Renowned for metis (resourceful intelligence) and endurance; learns to subordinate heroic vanity to patient humility.'
+      role: 'King of Ithaca & Traveler',
+      insight: 'Known for his quick thinking (metis) and grit; over the course of the trip, he has to learn to keep his pride in check and be patient.'
     },
     {
       name: 'Penelope',
-      role: 'Queen of Ithaca & Strategic Equal',
-      insight: 'Defends the household for twenty years through craft (the shroud of Laertes) and verifies Odysseus through the test of the rooted olive-tree bed.'
+      role: 'Queen of Ithaca & Equal Partner',
+      insight: 'Holds off more than a hundred suitors for twenty years through cleverness (weaving Laertes\' shroud) and tests Odysseus with the secret of their olive-tree bed.'
     },
     {
       name: 'Telemachus',
       role: 'Prince of Ithaca',
-      insight: 'Grows from an uncertain youth overshadowed by his father\'s legend into a discerning leader capable of standing beside Odysseus.'
+      insight: 'Grows from an unsure kid living in his famous father\'s shadow into a confident young man who can stand alongside Odysseus.'
     },
     {
       name: 'Eumaeus & Eurycleia',
-      role: 'Loyal Stewards of the Household',
-      insight: 'Embody everyday fidelity and sacred hospitality (xenia) when the palace elite have surrendered to arrogance.'
+      role: 'Loyal Caretakers of the Home',
+      insight: 'Show real loyalty and kindness to strangers (xenia) even when the rich suitors in the palace have forgotten basic decency.'
     }
   ],
   featuredBook20Quote: {
@@ -779,90 +779,90 @@ export const ODYSSEY_SPOTLIGHT_DATA = {
   },
   reasonsForChoosing: [
     {
-      title: 'A Redefinition of Heroism for the Thinking Reader',
-      body: 'Among all seven works on our chart table, The Odyssey stands at the center because it shifts the locus of heroism from battlefield domination to interior self-governance. Odysseus is flawed, curious, homesick, and mortal; his greatest victories occur when he restrains his own impulses.'
+      title: 'A More Realistic Kind of Heroism',
+      body: 'Out of all seven books we read, The Odyssey is my favorite because it defines heroism through self-control and problem-solving instead of just battlefield strength. Odysseus gets homesick, makes mistakes, and has to think his way out of trouble.'
     },
     {
-      title: 'The Refusal of Escapism in Favor of Mortal Meaning',
-      body: 'On Calypso\'s island of Ogygia, Odysseus is offered what every ancient warrior supposedly craved: ageless immortality free from pain. By rejecting timeless stasis to return to a rocky island and a mortal wife who will grow old beside him, the poem affirms that life\'s value comes precisely from our finite, committed bonds.'
+      title: 'Choosing Real Life Over Easy Escapes',
+      body: 'On Calypso\'s island, Odysseus is offered eternal youth and a pain-free life if he just stays with her. By turning down immortality to go back to a rocky island and grow old with his wife, he shows that life matters because of the real people we commit to.'
     },
     {
-      title: 'Intellectual Symmetry Between Partners',
-      body: 'In an ancient literary landscape often dominated by solitary male warriors, Homer crafts Penelope as Odysseus\' intellectual and strategic equal. Her test of the rooted olive-tree bed in Book 23 proves that true homecoming is a dialogue between two discerning minds.'
+      title: 'A True Partnership of Equals',
+      body: 'In a lot of ancient stories, women are pushed to the background, but Homer writes Penelope as Odysseus\' intellectual match. Her test with the olive-tree bed in Book 23 shows that their marriage works because they respect each other\'s minds.'
     }
   ],
   thematicExplorations: [
     {
       id: 'metis',
       title: 'Metis Over Brute Force',
-      subtitle: 'Adaptive Intelligence, Foresight, and Emotional Regulation',
+      subtitle: 'Thinking Ahead, Adaptability, and Self-Control',
       analysis:
-        'Throughout The Odyssey, raw physical force (biê) repeatedly proves inadequate against cosmic and psychological perils. In Polyphemus\' cave, killing the sleeping giant would trap the crew behind an immovable boulder; only metis (linguistic wordplay with "Nobody", patience, and engineering) opens the door. Later, tied to the mast before the Sirens or disguised in rags inside his own hall, Odysseus demonstrates that the highest form of metis is not trickery against others, but cognitive mastery over one\'s own appetites, anger, and vanity.',
+        'All through The Odyssey, raw muscle (biê) is not enough to get Odysseus out of trouble. In the Cyclops\' cave, killing the sleeping giant would have left the crew trapped behind a huge boulder; only metis (calling himself "Nobody," staying patient, and planning ahead) gets them out alive. Later, whether he is tied to the mast to get past the Sirens or dressed as a beggar in his own hall, Odysseus shows that the hardest part of metis is controlling your own temper and ego.',
       collegeAndLifeConnection:
-        'In university academics and contemporary life, we constantly face complex challenges that cannot be solved by sheer brute-force cramming or impulsive reaction. Practicing metis means pausing to diagnose the root structure of a problem, setting deliberate boundaries against distractions (like binding oneself to the mast before the Sirens), and adapting our strategy when initial plans fail.'
+        'In college and in Computer Science, you run into plenty of problems you cannot solve just by pulling an all-nighter or forcing things. Practicing metis means stepping back to understand the actual problem, setting boundaries against distractions (like tying yourself to the mast), and adjusting your plan when your first attempt fails.'
     },
     {
       id: 'homophrosyne',
       title: 'Penelope and Equal Minds',
-      subtitle: 'Homophrosyne as the Architecture of Trust',
+      subtitle: 'Homophrosyne as the Foundation of Trust',
       analysis:
-        'When Odysseus blesses Nausicaa in Book 6, he names homophrosyne ("like-mindedness" or harmony of spirit) as the highest human good. Penelope embodies this quality across twenty years of political and emotional siege. Neither passive nor gullible, she matches Odysseus\' famous wiles with the shroud of Laertes and the test of the marriage bed built from a living olive tree. When Odysseus loses his composure at the thought that someone cut the trunk of their bed, Penelope outwits the master of stratagems, proving her equal sovereignty in their marriage.',
+        'When Odysseus talks to Nausicaa in Book 6, he says the best thing in life is homophrosyne, when a husband and wife truly see eye to eye. Penelope proves she is his match across twenty years of pressure. She is neither helpless nor gullible, using Laertes\' shroud to stall the suitors and testing Odysseus with their bed built around a living olive tree. When Odysseus loses his cool at the thought that someone sawed the tree trunk, Penelope outsmarts the great trickster himself.',
       collegeAndLifeConnection:
-        'Studying Penelope and homophrosyne reshapes how we understand collaboration, friendship, and partnership in adulthood. Meaningful relationships are not built on uncritical compliance or superficial harmony, but on mutual respect for each other\'s intellect, shared standards of integrity, and symbols of trust rooted as deeply as the olive tree.'
+        'Reading about Penelope and homophrosyne changed how I think about friendships and relationships. Good partnerships are not about one person just agreeing with everything the other says; they are built on mutual respect, honesty, and trust that stays rooted when things get hard.'
     },
     {
       id: 'nostos',
       title: 'Nostos and Humility',
-      subtitle: 'The Beggar\'s Cloak and the Wisdom of Starting Over',
+      subtitle: 'The Beggar\'s Disguise and Starting from the Bottom',
       analysis:
-        'When Odysseus finally reaches Ithaca, he cannot stride into his palace as the conquering sacker of cities. Transformed into a frail, destitute beggar, he must sit at the threshold of his own hall, depend on the kindness of the swineherd Eumaeus, and absorb the insults of those who look down on the vulnerable. Only by experiencing his kingdom from the bottom up, seeing who honors xenia (sacred hospitality) toward a stranger with nothing to offer, does Odysseus become worthy to rule again.',
+        'When Odysseus finally steps foot on Ithaca, he cannot just march into his palace like a conquering general. Disguised as a poor beggar, he has to sit by the doorway of his own home, rely on the kindness of the swineherd Eumaeus, and take insults from people who look down on the poor. Seeing his own kingdom from the bottom up and noticing who still treats a stranger with respect (xenia) is what makes him ready to be a good king again.',
       collegeAndLifeConnection:
-        'As students transitioning between stages of education and career, we often wish we could skip straight to recognition. The beggar disguise teaches the transformative value of intellectual and personal humility: being willing to enter a new discipline as a beginner, listening to quiet mentors like Eumaeus, and judging our communities by how they treat people who hold no status.'
+        'As college students getting ready to graduate and start our careers, it is tempting to want instant status right away. Odysseus\' beggar disguise is a great reminder to stay humble: be willing to start as a beginner, learn from quiet mentors like Eumaeus, and pay attention to how people treat those who have no status.'
     }
   ]
 };
 
 export const CONSTELLATIONS_OF_UNDERSTANDING = {
-  subtitle: 'Synthesizing the Cross-Cultural Discoveries Recorded Across the Voyage',
+  subtitle: 'What I Learned by Comparing All Seven Books Across Different Cultures',
   pillars: [
     {
       id: 'cross-cultural-dialogue',
       roman: 'I',
-      title: 'Dialogue Across the Near East, India, and the West',
-      summary: 'One Humanity Asking Enduring Questions Across Distinct Civilizations',
+      title: 'Different Cultures Asking the Same Big Questions',
+      summary: 'Comparing the Near East, India, Greece, and Medieval Europe',
       paragraphs: [
-        'Charting a course across the Ancient Near East (The Book of Job), Ancient India (The Panchatantra, The Ramayana, The Mahabharata), Archaic Greece (The Iliad, The Odyssey), and Medieval Europe (The Song of Roland) reveals that no single civilization holds a monopoly on philosophical depth. Separated by oceans, languages, and centuries, these traditions repeatedly converge on the same urgent questions: Why do the innocent suffer? What do we owe our community when duty conflicts with conscience? How do we balance courage with restraint?',
-        'Yet their dialogue is enriched by productive contrasts. Where the Homeric epics frame human limitation against tragic mortality and the hunger for kleos or nostos, the Sanskrit epics examine action within a cosmic web of dharma and karma, while the Hebrew poet of Job brings human protest directly before the Creator\'s whirlwind. Reading them side by side replaces cultural insularity with comparative wonder.'
+        'Reading books from the Ancient Near East (The Book of Job), Ancient India (The Panchatantra, The Ramayana, The Mahabharata), Archaic Greece (The Iliad, The Odyssey), and Medieval Europe (The Song of Roland) showed me that no single culture owns wisdom. Even though these writers lived thousands of miles and centuries apart, they kept coming back to the same hard questions: Why do good people suffer? What do we do when two duties clash? Where is the line between bravery and foolish pride?',
+        'At the same time, their differences make them even more interesting to read together. Homer\'s heroes wrestle with a short mortal life and the desire for fame or home, the Sanskrit epics look at how our choices fit into dharma and karma, and Job brings his grief straight to God in the storm. Reading them side by side gave me a much wider view of how people make sense of the world.'
       ]
     },
     {
       id: 'literary-lenses',
       roman: 'II',
-      title: 'Literary Lenses as Navigational Instruments',
-      summary: 'How Critical Frameworks Reveal Hidden Bearings Within a Text',
+      title: 'Using Literary Lenses as Practical Tools',
+      summary: 'How Different Angles Help You See More in a Story',
       paragraphs: [
-        'Just as a navigator uses brass dividers, a compass rose, and a sounding lead to read an unfamiliar coastline, applying distinct literary lenses transforms our reading from passive plot summary into active discovery. Existential and archetypal criticism allow us to see Job\'s whirlwind not as an evasion, but as a radical decentering of human ego.',
-        'Similarly, deontological and psychological criticism unlock Arjuna\'s paralysis on the field of Kurukshetra, while tragic-heroic, structuralist, and historical-cultural lenses illuminate why Achilles weeps with Priam, how Vishnu Sharma\'s nested fables dissect political manipulation, and why Roland\'s refusal to sound the Oliphant reflects medieval anxieties over feudal honor.'
+        'Just like a sailor uses a compass and dividers to read a map, using literary lenses helped me get past simple plot summaries and actually understand why these stories work. For example, reading The Book of Job through an existential lens helped me see that God\'s speech from the whirlwind is not dodging Job\'s question, but showing him that the universe does not revolve around human scorekeeping.',
+        'In the same way, ethical and psychological criticism helped me understand why Arjuna freezes up at Kurukshetra, why Achilles cries with Priam in Book 24, how Vishnu Sharma uses nested animal fables to show how political manipulation works, and why Roland\'s fear of shame costs twenty thousand men their lives.'
       ]
     },
     {
       id: 'cultural-mirror',
       roman: 'III',
-      title: 'Literature as a Living Mirror of Human Experience and Society',
-      summary: 'Preserving the Ethical Architecture of Ancient Worlds',
+      title: 'Literature as an Honest Mirror of Society',
+      summary: 'Seeing Both the Ideals and the Flaws of Ancient Worlds',
       paragraphs: [
-        'Great literature preserves not merely what ancient societies built, but how they felt, argued, and doubted. Through these seven works, we witness the living texture of ancient values: the sacred law of hospitality (xenia) and like-minded partnership (homophrosyne) in Greece; the intricate debates over raja-dharma, bhakti, and niti in India; the fierce code of vassalage in Carolingian memory; and the refusal of hollow orthodoxy in wisdom literature.',
-        'Crucially, the greatest masterpieces do not merely repeat their culture\'s dominant ideology; they interrogate its fractures. Valmiki lets us feel the sorrow of Sita\'s exile; Vyasa lets us hear the mourning women after Kurukshetra; Homer gives the last books of The Iliad to Trojan grief.'
+        'Great books do more than tell us what ancient societies built; they show us what people cared about, argued over, and feared. Across these seven works, we see what held each community together: hospitality to strangers (xenia) and equal partnership (homophrosyne) in Greece, debates over duty (dharma), devotion (bhakti), and practical wisdom (niti) in India, feudal loyalty in medieval France, and honest faith in Hebrew poetry.',
+        'What stood out to me most is that the best writers do not just repeat their culture\'s rules; they also show where those rules hurt people. Valmiki lets us feel the unfairness of Sita\'s exile, Vyasa makes us listen to the grieving widows after the war at Kurukshetra, and Homer gives the final lines of The Iliad to the Trojans mourning Hector.'
       ]
     },
     {
       id: 'critical-empathy',
       roman: 'IV',
-      title: 'Growth in Critical Thinking, Interpretation, and Moral Empathy',
-      summary: 'From Textual Analysis to Ethical Discernment in the Real World',
+      title: 'Building Sharper Judgment and Real Empathy',
+      summary: 'How Reading Old Stories Helps in Everyday Life',
       paragraphs: [
-        'Sustained engagement with complex literary texts trains two capacities rarely developed together: analytical rigor and moral empathy. Analyzing Karataka and Damanaka\'s rhetoric in The Panchatantra or Ganelon\'s defense in The Song of Roland sharpens our ability to detect manipulation, weigh competing arguments, and question simplistic narratives.',
-        'At the same time, inhabiting the consciousness of Job in the ashes, Hector removing his helmet for his frightened son, or Yudhishthira refusing to abandon a stray dog expands our capacity to care for lives beyond our immediate circle.'
+        'Spending a full semester with these books trained two habits that do not always go together: thinking critically and caring about other people. Watching how Damanaka manipulates the lion and the bull in The Panchatantra or how Ganelon talks his way into treason in The Song of Roland teaches you to question people\'s motives and not fall for easy stories.',
+        'At the same time, putting yourself in the shoes of Job sitting in the ashes, Hector taking off his terrifying helmet so he can hug his baby son, or Yudhishthira refusing to leave a stray dog outside heaven makes you more understanding of what other people are going through.'
       ]
     }
   ]

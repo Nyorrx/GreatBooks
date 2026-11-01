@@ -10,13 +10,14 @@ export interface SoundtrackTrack {
   subtitle: string;
 }
 
+const baseUrl = (import.meta.env.BASE_URL || './').replace(/\/+$/, '') + '/';
+
 export const SOUNDTRACK_FILE_NAME =
   'The Odyssey Soundtrack (2026) by Ludwig Göransson - Echoes of the Underworld.mp3';
 
-export const SOUNDTRACK_FILE_PATH =
-  '/audio/islands/' + encodeURI(SOUNDTRACK_FILE_NAME);
+export const SOUNDTRACK_FILE_PATH = `${baseUrl}audio/islands/soundtrack.mp3`;
 
-export const SOUNDTRACK_FALLBACK_PATH = '/audio/islands/soundtrack.mp3';
+export const SOUNDTRACK_FALLBACK_PATH = `${baseUrl}audio/islands/soundtrack.mp3`;
 
 /**
  * Global website soundtrack for the entire digital portfolio.

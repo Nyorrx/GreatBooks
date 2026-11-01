@@ -43,7 +43,7 @@ function createFloatingShadowTexture(): THREE.CanvasTexture {
  * for the island's 3D nameplate so its title travels with the island when lifted.
  */
 function createIslandCartoucheTexture(realm: LiteraryRealm): THREE.CanvasTexture {
-  const width = 640;
+  const width = 560;
   const height = 112;
   const canvas = document.createElement('canvas');
   canvas.width = width;
@@ -79,20 +79,21 @@ function createIslandCartoucheTexture(realm: LiteraryRealm): THREE.CanvasTexture
 
     // Roman Numeral + Proper Title
     ctx.font = realm.isFavoriteMasterpiece
-      ? 'bold 34px "Cinzel", Georgia, serif'
-      : 'bold 31px "Cinzel", Georgia, serif';
+      ? 'bold 31px "Cinzel", Georgia, serif'
+      : 'bold 29px "Cinzel", Georgia, serif';
     ctx.fillStyle = realm.isFavoriteMasterpiece ? '#873B35' : '#2C1E12';
     ctx.textAlign = 'center';
     ctx.fillText(
       `${realm.romanNumeral}. ${realm.properTitle.toUpperCase()}`,
       width * 0.5,
-      50
+      50,
+      width - 44
     );
 
     // Subtitle / Realm Name
-    ctx.font = 'italic 24px "Cormorant Garamond", Georgia, serif';
+    ctx.font = 'italic 22px "Cormorant Garamond", Georgia, serif';
     ctx.fillStyle = '#59432E';
-    ctx.fillText(realm.realmName, width * 0.5, 84);
+    ctx.fillText(realm.realmName, width * 0.5, 84, width - 48);
   }
   const tex = new THREE.CanvasTexture(canvas);
   tex.colorSpace = THREE.SRGBColorSpace;
@@ -241,7 +242,7 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
   });
 
   // 1. Handcrafted Miniature Diorama Emerging Directly from the Parchment Chart
-  const baseRadius = realm.isFavoriteMasterpiece ? 2.95 : 2.25;
+  const baseRadius = realm.isFavoriteMasterpiece ? 2.80 : 2.25;
 
   // Physical Brass & Sealing-Wax Cartographic Pin Marker beside the Diorama
   const markerPinGroup = new THREE.Group();
@@ -557,7 +558,8 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
     case 'ramayana': {
       // III. The Ramayana - The Bridge to Lanka
       // Sculpted stone bridge (Rama Setu) crossing sea channel toward the fortified Golden Citadel of Lanka,
-      // with Kishkindha shore, curved coconut palm trees, Vanara camp fire, floating inscribed stones, and temple gopuram.
+      // with Kishkindha shore, Dravidian shore shrine, curved coconut palm trees, Vanara camp fire,
+      // ocean waves, floating inscribed stones, and fortified golden palace & temple gopuram of Lanka.
       const seaBasin = new THREE.Mesh(
         new THREE.CylinderGeometry(2.12, 2.18, 0.16, 24),
         seaSlateMat
@@ -584,6 +586,32 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
 
       dioramaCore.add(seaBasin, nearFoam, farFoam);
 
+      // Subtle sculpted ocean waves & whitecaps across the sea channel surrounding the bridge
+      const waveSpecs: [number, number, number, number][] = [
+        [-0.45, -0.55, 0.42, 0.32],
+        [0.05, -0.72, 0.48, 0.24],
+        [-0.15, 0.78, 0.46, 0.28],
+        [0.52, 0.58, 0.38, 0.35],
+        [-0.78, -0.25, 0.34, 0.22],
+        [0.68, 0.22, 0.36, 0.28],
+      ];
+      waveSpecs.forEach(([wx, wz, len, rot]) => {
+        const waveSwell = new THREE.Mesh(
+          new THREE.CapsuleGeometry(0.024, len, 4, 8),
+          seaSlateMat
+        );
+        waveSwell.position.set(wx, 0.14, wz);
+        waveSwell.rotation.z = Math.PI / 2;
+        waveSwell.rotation.y = rot;
+        const waveCrest = new THREE.Mesh(
+          new THREE.BoxGeometry(len * 0.85, 0.014, 0.026),
+          foamWhiteMat
+        );
+        waveCrest.position.set(wx, 0.16, wz);
+        waveCrest.rotation.y = rot;
+        dioramaCore.add(waveSwell, waveCrest);
+      });
+
       // Near Shore (Mainland Woods of Rameshwaram & Kishkindha)
       const nearShore = new THREE.Mesh(
         new THREE.CylinderGeometry(0.75, 0.92, 0.35, 12),
@@ -599,28 +627,132 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       nearShoreGrass.position.set(-1.25, 0.42, 0.35);
       dioramaCore.add(nearShore, nearShoreGrass);
 
-      // Realistic Miniature Tropical Palm Trees on Near Shore
-      [-1.48, -1.1].forEach((px, idx) => {
-        const pz = 0.35 + idx * 0.24;
+      // Rugged coastal boulders & tropical undergrowth on the Rameshwaram headland
+      [
+        { x: -1.68, y: 0.24, z: 0.05, r: 0.22 },
+        { x: -1.55, y: 0.22, z: 0.78, r: 0.19 },
+        { x: -0.82, y: 0.2, z: 0.76, r: 0.17 },
+      ].forEach((b, idx) => {
+        const rock = new THREE.Mesh(
+          new THREE.DodecahedronGeometry(b.r, 0),
+          idx % 2 === 0 ? weatheredStoneMat : ochreRockMat
+        );
+        rock.position.set(b.x, b.y, b.z);
+        rock.scale.set(1.15, 0.78, 1.05);
+        rock.castShadow = true;
+        dioramaCore.add(rock);
+      });
+
+      [
+        [-1.56, 0.46, 0.22, 0.14],
+        [-1.32, 0.46, 0.72, 0.16],
+        [-0.95, 0.45, 0.56, 0.13],
+      ].forEach(([bx, by, bz, br], idx) => {
+        const bush = new THREE.Mesh(
+          new THREE.DodecahedronGeometry(br, 1),
+          idx % 2 === 0 ? mossGreenMat : deepFoliageMat
+        );
+        bush.position.set(bx, by, bz);
+        bush.scale.set(1.25, 0.72, 1.15);
+        bush.castShadow = true;
+        dioramaCore.add(bush);
+      });
+
+      // Ancient Indian Dravidian Shore Shrine (Mandapa & Vimana) on the Rameshwaram Coast
+      const shrineGroup = new THREE.Group();
+      shrineGroup.position.set(-1.38, 0.46, 0.52);
+      shrineGroup.rotation.y = 0.28;
+
+      const shrinePlinth = new THREE.Mesh(
+        new THREE.BoxGeometry(0.36, 0.07, 0.32),
+        limestoneMat
+      );
+      shrinePlinth.position.y = 0.035;
+      shrinePlinth.castShadow = true;
+      shrineGroup.add(shrinePlinth);
+
+      [
+        [-0.12, -0.1],
+        [0.12, -0.1],
+        [-0.12, 0.1],
+        [0.12, 0.1],
+      ].forEach(([px, pz]) => {
+        const col = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.022, 0.028, 0.2, 8),
+          sandstoneMat
+        );
+        col.position.set(px, 0.17, pz);
+        col.castShadow = true;
+        shrineGroup.add(col);
+      });
+
+      const vimanaTier1 = new THREE.Mesh(
+        new THREE.BoxGeometry(0.34, 0.07, 0.3),
+        sandstoneMat
+      );
+      vimanaTier1.position.y = 0.29;
+      const vimanaTier2 = new THREE.Mesh(
+        new THREE.BoxGeometry(0.24, 0.06, 0.22),
+        terracottaMat
+      );
+      vimanaTier2.position.y = 0.355;
+      const vimanaDome = new THREE.Mesh(
+        new THREE.ConeGeometry(0.13, 0.12, 8),
+        goldLeafMat
+      );
+      vimanaDome.position.y = 0.44;
+      const vimanaKalasha = new THREE.Mesh(
+        new THREE.SphereGeometry(0.028, 8, 8),
+        burnishedBrassMat
+      );
+      vimanaKalasha.position.y = 0.51;
+      shrineGroup.add(vimanaTier1, vimanaTier2, vimanaDome, vimanaKalasha);
+
+      // Carved stone Deepastambha (sacred lamp pillar) beside the shore shrine
+      const lampPillar = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.016, 0.024, 0.28, 8),
+        weatheredStoneMat
+      );
+      lampPillar.position.set(0.24, 0.14, -0.08);
+      const lampBowl = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.04, 0.02, 0.025, 8),
+        burnishedBrassMat
+      );
+      lampBowl.position.set(0.24, 0.28, -0.08);
+      const lampFlame = new THREE.Mesh(
+        new THREE.SphereGeometry(0.024, 8, 8),
+        amberGlowMat
+      );
+      lampFlame.position.set(0.24, 0.305, -0.08);
+      shrineGroup.add(lampPillar, lampBowl, lampFlame);
+      dioramaCore.add(shrineGroup);
+
+      // Realistic Miniature Tropical Palm Trees on Near Shore & Lanka Coast
+      [
+        { px: -1.48, pz: 0.22, tiltZ: -0.18, tiltX: 0.1, h: 0.58 },
+        { px: -1.1, pz: 0.59, tiltZ: 0.14, tiltX: 0.1, h: 0.58 },
+        { px: -1.62, pz: 0.42, tiltZ: -0.22, tiltX: -0.08, h: 0.48 },
+        { px: 0.72, pz: -0.68, tiltZ: 0.16, tiltX: -0.1, h: 0.46 },
+      ].forEach(({ px, pz, tiltZ, tiltX, h }) => {
         const trunk = new THREE.Mesh(
-          new THREE.CylinderGeometry(0.035, 0.055, 0.58, 7),
+          new THREE.CylinderGeometry(0.032, 0.052, h, 7),
           agedCedarMat
         );
-        trunk.position.set(px, 0.58, pz);
-        trunk.rotation.z = idx === 0 ? -0.18 : 0.14;
-        trunk.rotation.x = 0.1;
+        trunk.position.set(px, 0.29 + h * 0.5, pz);
+        trunk.rotation.z = tiltZ;
+        trunk.rotation.x = tiltX;
         trunk.castShadow = true;
 
-        // Radiating arched palm fronds
+        // Radiating arched palm fronds & coconuts
         const frondGroup = new THREE.Group();
-        frondGroup.position.set(px + (idx === 0 ? -0.05 : 0.04), 0.86, pz + 0.03);
+        frondGroup.position.set(px - Math.sin(tiltZ) * h * 0.45, 0.29 + h, pz + Math.sin(tiltX) * h * 0.45);
         for (let f = 0; f < 6; f++) {
           const fAng = (f / 6) * Math.PI * 2;
           const frondPivot = new THREE.Group();
           frondPivot.rotation.y = fAng;
           const frond = new THREE.Mesh(
             new THREE.ConeGeometry(0.065, 0.34, 4),
-            deepFoliageMat
+            f % 2 === 0 ? deepFoliageMat : mossGreenMat
           );
           frond.scale.set(1.2, 1, 0.35);
           frond.position.set(0.15, -0.02, 0);
@@ -628,6 +760,12 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
           frondPivot.add(frond);
           frondGroup.add(frondPivot);
         }
+        const coconut = new THREE.Mesh(
+          new THREE.SphereGeometry(0.026, 6, 6),
+          carvedWalnutMat
+        );
+        coconut.position.set(0.02, -0.03, 0.02);
+        frondGroup.add(coconut);
         dioramaCore.add(trunk, frondGroup);
       });
 
@@ -637,17 +775,69 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
         amberGlowMat
       );
       campFire.position.set(-1.05, 0.48, 0.12);
-      const campLight = new THREE.PointLight('#E89A38', 1.5, 2.5);
-      campLight.position.set(-1.05, 0.55, 0.12);
+      const campLight = new THREE.PointLight('#E89A38', 1.8, 3.2);
+      campLight.position.set(-1.05, 0.58, 0.12);
       dioramaCore.add(campFire, campLight);
 
       // Dominant Silhouette: Sculpted Multi-Arch Stone Bridge (Rama Setu)
       const bridgeGroup = new THREE.Group();
+
+      // Carved Ancient Indian Torana (Ceremonial Gateway Arch) at the Rameshwaram Bridgehead
+      const toranaGroup = new THREE.Group();
+      toranaGroup.position.set(-1.0, 0.42, 0.27);
+      toranaGroup.rotation.y = 0.26 + Math.PI / 2;
+      [-0.16, 0.16].forEach((tx) => {
+        const tPillar = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.024, 0.03, 0.36, 8),
+          sandstoneMat
+        );
+        tPillar.position.set(tx, 0.18, 0);
+        tPillar.castShadow = true;
+        const tBase = new THREE.Mesh(
+          new THREE.BoxGeometry(0.07, 0.05, 0.07),
+          weatheredStoneMat
+        );
+        tBase.position.set(tx, 0.025, 0);
+        toranaGroup.add(tPillar, tBase);
+      });
+      const lintelLower = new THREE.Mesh(
+        new THREE.BoxGeometry(0.42, 0.035, 0.05),
+        sandstoneMat
+      );
+      lintelLower.position.y = 0.34;
+      const lintelUpper = new THREE.Mesh(
+        new THREE.BoxGeometry(0.46, 0.04, 0.055),
+        goldLeafMat
+      );
+      lintelUpper.position.y = 0.4;
+      const toranaKalasha = new THREE.Mesh(
+        new THREE.ConeGeometry(0.028, 0.07, 6),
+        burnishedBrassMat
+      );
+      toranaKalasha.position.y = 0.455;
+      toranaGroup.add(lintelLower, lintelUpper, toranaKalasha);
+      bridgeGroup.add(toranaGroup);
+
       const numArches = 5;
       for (let a = 0; a < numArches; a++) {
         const bx = -0.82 + a * 0.44;
         const bz = 0.22 - a * 0.12;
         const archHeight = 0.42 + Math.sin((a / (numArches - 1)) * Math.PI) * 0.22;
+
+        // Cut-stone pier with stepped foundation footing & weathered moss band at waterline
+        const pierFooting = new THREE.Mesh(
+          new THREE.BoxGeometry(0.22, 0.08, 0.42),
+          darkSlateMat
+        );
+        pierFooting.position.set(bx - 0.2, 0.13, bz);
+        pierFooting.rotation.y = 0.26;
+
+        const pierMoss = new THREE.Mesh(
+          new THREE.BoxGeometry(0.19, 0.05, 0.39),
+          mossGreenMat
+        );
+        pierMoss.position.set(bx - 0.2, 0.18, bz);
+        pierMoss.rotation.y = 0.26;
 
         const pier = new THREE.Mesh(
           new THREE.BoxGeometry(0.16, archHeight, 0.36),
@@ -665,6 +855,14 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
         archSpan.rotation.y = 0.26;
         archSpan.castShadow = true;
 
+        // Carved keystone at the crown of each bridge arch
+        const keystone = new THREE.Mesh(
+          new THREE.BoxGeometry(0.06, 0.08, 0.38),
+          goldLeafMat
+        );
+        keystone.position.set(bx, 0.25 + archHeight * 0.65, bz);
+        keystone.rotation.y = 0.26;
+
         const parapet = new THREE.Mesh(
           new THREE.BoxGeometry(0.46, 0.09, 0.34),
           agedIvoryMat
@@ -673,29 +871,65 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
         parapet.rotation.y = 0.26;
         parapet.castShadow = true;
 
-        // Lotus bud finials on the bridge piers
+        // Individual weathered stone blocks & low side balustrades along the bridge deck
+        const spanGroup = new THREE.Group();
+        spanGroup.position.set(bx, 0.395 + archHeight * 0.65, bz);
+        spanGroup.rotation.y = 0.26;
+        for (let b = -1; b <= 1; b++) {
+          const block = new THREE.Mesh(
+            new THREE.BoxGeometry(0.13, 0.022, 0.26),
+            (a + b) % 2 === 0 ? limestoneMat : weatheredStoneMat
+          );
+          block.position.set(b * 0.145, 0.008, 0);
+          spanGroup.add(block);
+        }
+        [-0.15, 0.15].forEach((railZ) => {
+          const rail = new THREE.Mesh(
+            new THREE.BoxGeometry(0.45, 0.045, 0.035),
+            sandstoneMat
+          );
+          rail.position.set(0, 0.025, railZ);
+          spanGroup.add(rail);
+        });
+
+        // Twin lotus bud finials on both sides of the bridge piers
         const finial = new THREE.Mesh(
           new THREE.ConeGeometry(0.035, 0.08, 6),
           goldLeafMat
         );
         finial.position.set(bx - 0.2, 0.38 + archHeight * 0.65, bz + 0.18);
-        bridgeGroup.add(pier, archSpan, parapet, finial);
+        const finialBack = finial.clone();
+        finialBack.position.set(bx - 0.2, 0.38 + archHeight * 0.65, bz - 0.18);
+
+        bridgeGroup.add(
+          pierFooting,
+          pierMoss,
+          pier,
+          archSpan,
+          keystone,
+          parapet,
+          spanGroup,
+          finial,
+          finialBack
+        );
       }
 
-      // Floating inscribed stones in the sea along the bridge
+      // Floating inscribed stones (Nala-Setu) in the sea along the bridge
       [
-        { x: -0.52, z: 0.38 },
-        { x: 0.12, z: 0.28 },
-        { x: 0.65, z: 0.08 },
-      ].forEach((st) => {
+        { x: -0.52, z: 0.38, r: 0.11 },
+        { x: 0.12, z: 0.28, r: 0.11 },
+        { x: 0.65, z: 0.08, r: 0.11 },
+        { x: -0.22, z: -0.18, r: 0.09 },
+        { x: 0.38, z: -0.26, r: 0.095 },
+      ].forEach((st, idx) => {
         const stone = new THREE.Mesh(
-          new THREE.DodecahedronGeometry(0.11, 0),
-          weatheredStoneMat
+          new THREE.DodecahedronGeometry(st.r, 0),
+          idx % 2 === 0 ? weatheredStoneMat : sandstoneMat
         );
         stone.position.set(st.x, 0.12, st.z);
         stone.castShadow = true;
         const ripple = new THREE.Mesh(
-          new THREE.TorusGeometry(0.15, 0.02, 6, 12),
+          new THREE.TorusGeometry(st.r * 1.38, 0.018, 6, 14),
           foamWhiteMat
         );
         ripple.rotation.x = Math.PI / 2;
@@ -704,13 +938,33 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       });
       dioramaCore.add(bridgeGroup);
 
-      // Far Shore: Fortified Terraced Island Citadel of Lanka with Temple Gopuram & Spire
+      // Far Shore: Fortified Terraced Island Citadel of Lanka with Golden Palace & Temple Gopuram
       const lankaCrag = new THREE.Mesh(
         new THREE.ConeGeometry(0.88, 0.85, 8),
         ochreRockMat
       );
       lankaCrag.position.set(1.22, 0.45, -0.35);
       lankaCrag.castShadow = true;
+
+      // Secondary coastal cliffs & lush tropical canopy around Lanka's base
+      [
+        { x: 0.78, y: 0.32, z: -0.78, r: 0.36, h: 0.55 },
+        { x: 1.62, y: 0.3, z: 0.12, r: 0.34, h: 0.52 },
+      ].forEach((crag) => {
+        const cliff = new THREE.Mesh(
+          new THREE.ConeGeometry(crag.r, crag.h, 7),
+          ochreRockMat
+        );
+        cliff.position.set(crag.x, crag.y, crag.z);
+        cliff.castShadow = true;
+        const canopy = new THREE.Mesh(
+          new THREE.DodecahedronGeometry(0.16, 1),
+          deepFoliageMat
+        );
+        canopy.position.set(crag.x, crag.y + crag.h * 0.45, crag.z);
+        canopy.scale.set(1.3, 0.7, 1.2);
+        dioramaCore.add(cliff, canopy);
+      });
 
       const citadelWall = new THREE.Mesh(
         new THREE.CylinderGeometry(0.55, 0.64, 0.52, 8),
@@ -719,18 +973,82 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       citadelWall.position.set(1.22, 0.92, -0.35);
       citadelWall.castShadow = true;
 
-      // Multi-tiered stepped golden temple gopuram tower
+      // Fortified outer golden-ringed battlements & flanking bastion watchtowers of Lanka
+      const lankaFortGroup = new THREE.Group();
+      lankaFortGroup.position.set(1.22, 0.92, -0.35);
+
+      const wallGoldBand = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.57, 0.58, 0.06, 8),
+        goldLeafMat
+      );
+      wallGoldBand.position.y = 0.22;
+      lankaFortGroup.add(wallGoldBand);
+
+      for (let t = 0; t < 6; t++) {
+        const ang = (t / 6) * Math.PI * 2 + 0.3;
+        const tx = Math.cos(ang) * 0.56;
+        const tz = Math.sin(ang) * 0.56;
+        const bastion = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.09, 0.11, 0.56, 8),
+          sandstoneMat
+        );
+        bastion.position.set(tx, 0.02, tz);
+        bastion.castShadow = true;
+        const bastionDome = new THREE.Mesh(
+          new THREE.ConeGeometry(0.105, 0.14, 8),
+          goldLeafMat
+        );
+        bastionDome.position.set(tx, 0.36, tz);
+        lankaFortGroup.add(bastion, bastionDome);
+      }
+
+      // Decorative crimson & gold royal banners flying from Lanka's citadel
+      [
+        [-0.36, 0.38, 0.28],
+        [0.36, 0.38, -0.28],
+      ].forEach(([bx, by, bz]) => {
+        const staff = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.01, 0.012, 0.34, 6),
+          burnishedBrassMat
+        );
+        staff.position.set(bx, by, bz);
+        const pennant = new THREE.Mesh(
+          new THREE.ConeGeometry(0.045, 0.16, 3),
+          sealingWaxMat
+        );
+        pennant.position.set(bx + 0.07, by + 0.11, bz);
+        pennant.rotation.z = -Math.PI / 2;
+        lankaFortGroup.add(staff, pennant);
+      });
+      dioramaCore.add(lankaFortGroup);
+
+      // Multi-tiered stepped golden temple gopuram tower & palace carvings
       const gopuramTier1 = new THREE.Mesh(
         new THREE.BoxGeometry(0.48, 0.22, 0.48),
         sandstoneMat
       );
       gopuramTier1.position.set(1.22, 1.25, -0.35);
 
+      const gopuramCornice1 = new THREE.Mesh(
+        new THREE.BoxGeometry(0.52, 0.04, 0.52),
+        goldLeafMat
+      );
+      gopuramCornice1.position.set(1.22, 1.36, -0.35);
+
       const gopuramTier2 = new THREE.Mesh(
         new THREE.BoxGeometry(0.38, 0.18, 0.38),
         goldLeafMat
       );
       gopuramTier2.position.set(1.22, 1.44, -0.35);
+
+      // Glowing golden palace windows & carved Gavaksha (horseshoe arch) niches on the gopuram
+      const palaceWindow = new THREE.Mesh(
+        new THREE.BoxGeometry(0.5, 0.09, 0.14),
+        amberGlowMat
+      );
+      palaceWindow.position.set(1.22, 1.25, -0.35);
+      const palaceWindowCross = palaceWindow.clone();
+      palaceWindowCross.rotation.y = Math.PI / 2;
 
       const centralSpire = new THREE.Mesh(
         new THREE.ConeGeometry(0.24, 0.58, 8),
@@ -739,7 +1057,21 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       centralSpire.position.set(1.22, 1.82, -0.35);
       centralSpire.castShadow = true;
 
-      dioramaCore.add(lankaCrag, citadelWall, gopuramTier1, gopuramTier2, centralSpire);
+      // Subtle atmospheric golden light radiating from Lanka's citadel across the bridge
+      const lankaLight = new THREE.PointLight('#F3C879', 2.4, 4.5);
+      lankaLight.position.set(1.15, 1.65, -0.25);
+
+      dioramaCore.add(
+        lankaCrag,
+        citadelWall,
+        gopuramTier1,
+        gopuramCornice1,
+        gopuramTier2,
+        palaceWindow,
+        palaceWindowCross,
+        centralSpire,
+        lankaLight
+      );
       animatedParts.push(centralSpire);
       break;
     }
@@ -747,13 +1079,32 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
     case 'mahabharata': {
       // IV. The Mahabharata - The Chariot of Kurukshetra
       // Bronze war chariot (Nandighosha) with rotating spoked wheels, Arjuna's canopy, divine Hanuman flag (Kapi Dhwaja),
-      // golden arrow quivers, sacred conch Panchajanya, ivory horses, discarded battlefield shields, and spears.
+      // golden arrow quivers, sacred conch Panchajanya, Gandiva bow, caparisoned ivory horses, battlefield tents,
+      // distant warrior formations, footprints, scattered arrows, broken weapons, and swirling Kurukshetra dust.
       const battlefieldMound = new THREE.Mesh(
         new THREE.CylinderGeometry(2.08, 2.18, 0.24, 18),
         ochreRockMat
       );
       battlefieldMound.position.y = 0.1;
       battlefieldMound.receiveShadow = true;
+
+      // Uneven earthen ridges & dusty terrain contours across Kurukshetra
+      [
+        { x: -1.15, z: -0.95, rx: 0.48, rz: 0.32, h: 0.09, rot: 0.4 },
+        { x: 0.92, z: -1.08, rx: 0.52, rz: 0.34, h: 0.1, rot: -0.35 },
+        { x: -0.95, z: 1.12, rx: 0.45, rz: 0.28, h: 0.08, rot: -0.25 },
+        { x: 1.18, z: 0.92, rx: 0.44, rz: 0.3, h: 0.085, rot: 0.5 },
+      ].forEach((m, idx) => {
+        const ridge = new THREE.Mesh(
+          new THREE.CylinderGeometry(m.rx * 0.75, m.rx, m.h, 9),
+          idx % 2 === 0 ? sandstoneMat : weatheredStoneMat
+        );
+        ridge.position.set(m.x, 0.22 + m.h * 0.4, m.z);
+        ridge.scale.set(1, 1, m.rz / m.rx);
+        ridge.rotation.y = m.rot;
+        ridge.receiveShadow = true;
+        dioramaCore.add(ridge);
+      });
 
       // Wheel ruts carved across the dusty field
       const rut1 = new THREE.Mesh(
@@ -771,7 +1122,23 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       rut2.rotation.y = -0.15;
       dioramaCore.add(battlefieldMound, rut1, rut2);
 
-      // Discarded battlefield relics: bronze shield, half-buried wheel, and broken spears
+      // Hoofprints & warrior footprints impressed into the battlefield dust
+      [
+        [-0.75, 0.52], [-0.45, 0.58], [-0.15, 0.48], [0.25, 0.55],
+        [0.62, -0.52], [0.88, -0.46], [1.45, 0.28], [1.55, -0.24],
+        [-0.58, -0.48], [-0.28, -0.54],
+      ].forEach(([fx, fz], idx) => {
+        const print = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.032, 0.028, 0.015, 7),
+          darkSlateMat
+        );
+        print.position.set(fx, 0.225, fz);
+        print.scale.set(1.25, 1, 0.85);
+        print.rotation.y = idx * 0.5;
+        dioramaCore.add(print);
+      });
+
+      // Discarded battlefield relics: bronze shield, half-buried wheel, broken spears, mace (Gada) & scattered arrows
       const discardedShield = new THREE.Mesh(
         new THREE.CylinderGeometry(0.24, 0.24, 0.04, 12),
         agedBronzeMat
@@ -780,6 +1147,20 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       discardedShield.rotation.x = 0.32;
       discardedShield.rotation.z = -0.22;
       discardedShield.castShadow = true;
+
+      const shieldBoss = new THREE.Mesh(
+        new THREE.SphereGeometry(0.065, 8, 8),
+        goldLeafMat
+      );
+      shieldBoss.position.set(-1.05, 0.27, 0.72);
+      const shieldRim = new THREE.Mesh(
+        new THREE.TorusGeometry(0.23, 0.018, 6, 16),
+        burnishedBrassMat
+      );
+      shieldRim.position.set(-1.05, 0.26, 0.72);
+      shieldRim.rotation.x = Math.PI / 2 + 0.32;
+      shieldRim.rotation.y = 0.22;
+      dioramaCore.add(shieldBoss, shieldRim);
 
       const buriedWheel = new THREE.Mesh(
         new THREE.TorusGeometry(0.28, 0.035, 6, 16),
@@ -790,7 +1171,7 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       buriedWheel.rotation.x = 0.65;
       buriedWheel.castShadow = true;
 
-      // Broken spear shaft
+      // Broken spear shaft with bronze spearhead
       const spearShaft = new THREE.Mesh(
         new THREE.CylinderGeometry(0.018, 0.018, 0.85, 6),
         carvedWalnutMat
@@ -800,10 +1181,143 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       spearShaft.rotation.y = 0.3;
       dioramaCore.add(discardedShield, buriedWheel, spearShaft);
 
+      // Fallen bronze Gada (war mace) & broken sword blade in the dust
+      const gadaGroup = new THREE.Group();
+      gadaGroup.position.set(0.58, 0.25, 0.96);
+      gadaGroup.rotation.z = 1.42;
+      gadaGroup.rotation.y = -0.5;
+      const gadaShaft = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.016, 0.02, 0.42, 8),
+        burnishedBrassMat
+      );
+      const gadaHead = new THREE.Mesh(
+        new THREE.DodecahedronGeometry(0.075, 1),
+        goldLeafMat
+      );
+      gadaHead.position.y = 0.22;
+      gadaGroup.add(gadaShaft, gadaHead);
+      dioramaCore.add(gadaGroup);
+
+      // Volley of scattered arrows planted across the battlefield
+      [
+        { x: -0.62, z: 0.92, rz: -0.35, rx: 0.2 },
+        { x: -0.48, z: 0.82, rz: -0.28, rx: -0.15 },
+        { x: 0.78, z: 0.58, rz: 0.42, rx: 0.18 },
+        { x: 1.12, z: 0.68, rz: 0.3, rx: -0.22 },
+        { x: -0.38, z: -0.88, rz: -0.4, rx: 0.25 },
+        { x: 0.35, z: -0.78, rz: 0.25, rx: -0.18 },
+      ].forEach((ar) => {
+        const arrowGroup = new THREE.Group();
+        arrowGroup.position.set(ar.x, 0.22, ar.z);
+        arrowGroup.rotation.z = ar.rz;
+        arrowGroup.rotation.x = ar.rx;
+        const shaft = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.008, 0.008, 0.32, 5),
+          carvedWalnutMat
+        );
+        shaft.position.y = 0.14;
+        const fletch = new THREE.Mesh(
+          new THREE.ConeGeometry(0.022, 0.06, 4),
+          goldLeafMat
+        );
+        fletch.position.y = 0.28;
+        arrowGroup.add(shaft, fletch);
+        dioramaCore.add(arrowGroup);
+      });
+
+      // Small Ancient Indian Battlefield Tents (Shibira Royal War Pavilions) on the Flanks
+      [
+        { x: -1.48, z: -0.18, scale: 1.0, rot: 0.35 },
+        { x: 0.62, z: -1.32, scale: 0.86, rot: -0.42 },
+      ].forEach((t) => {
+        const tentGroup = new THREE.Group();
+        tentGroup.position.set(t.x, 0.22, t.z);
+        tentGroup.rotation.y = t.rot;
+        tentGroup.scale.setScalar(t.scale);
+
+        const tentWalls = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.22, 0.25, 0.2, 8),
+          agedIvoryMat
+        );
+        tentWalls.position.y = 0.1;
+        tentWalls.castShadow = true;
+
+        const tentCanopy = new THREE.Mesh(
+          new THREE.ConeGeometry(0.28, 0.22, 8),
+          sealingWaxMat
+        );
+        tentCanopy.position.y = 0.29;
+        tentCanopy.castShadow = true;
+
+        const tentGoldBand = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.26, 0.27, 0.03, 8),
+          goldLeafMat
+        );
+        tentGoldBand.position.y = 0.19;
+
+        const tentFinial = new THREE.Mesh(
+          new THREE.ConeGeometry(0.03, 0.09, 6),
+          burnishedBrassMat
+        );
+        tentFinial.position.y = 0.43;
+
+        tentGroup.add(tentWalls, tentCanopy, tentGoldBand, tentFinial);
+        dioramaCore.add(tentGroup);
+      });
+
+      // Distant Silhouette Warriors with Shields & Spears on the Perimeter Ridge for Epic Scale
+      [
+        { x: -1.18, z: -1.02, rot: 0.4 },
+        { x: -0.96, z: -1.14, rot: 0.32 },
+        { x: 0.98, z: -1.05, rot: -0.35 },
+        { x: 1.18, z: -0.9, rot: -0.45 },
+        { x: -1.32, z: 0.58, rot: 0.18 },
+      ].forEach((w) => {
+        const warrior = new THREE.Group();
+        warrior.position.set(w.x, 0.24, w.z);
+        warrior.rotation.y = w.rot;
+
+        const body = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.026, 0.036, 0.2, 6),
+          carvedWalnutMat
+        );
+        body.position.y = 0.1;
+        const head = new THREE.Mesh(
+          new THREE.SphereGeometry(0.028, 6, 6),
+          agedBronzeMat
+        );
+        head.position.y = 0.22;
+        const crest = new THREE.Mesh(
+          new THREE.ConeGeometry(0.018, 0.05, 5),
+          goldLeafMat
+        );
+        crest.position.y = 0.26;
+        const wShield = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.055, 0.055, 0.015, 8),
+          burnishedBrassMat
+        );
+        wShield.position.set(0.035, 0.11, 0.025);
+        wShield.rotation.z = Math.PI / 2;
+        const wSpear = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.006, 0.006, 0.38, 5),
+          antiqueBrassMat
+        );
+        wSpear.position.set(-0.03, 0.18, 0);
+        wSpear.rotation.z = -0.12;
+        warrior.add(body, head, crest, wShield, wSpear);
+        dioramaCore.add(warrior);
+      });
+
       const chariotGroup = new THREE.Group();
       chariotGroup.position.set(-0.22, 0.22, 0);
 
-      // Carved Dark Timber & Bronze Chariot Platform
+      // Carved Dark Timber & Bronze Chariot Platform (Nandighosha) with Stepped Ratha Moldings
+      const lowerPlinth = new THREE.Mesh(
+        new THREE.BoxGeometry(1.44, 0.07, 1.14),
+        burnishedBrassMat
+      );
+      lowerPlinth.position.y = 0.3;
+
       const chassis = new THREE.Mesh(
         new THREE.BoxGeometry(1.35, 0.22, 1.05),
         carvedWalnutMat
@@ -817,21 +1331,83 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       );
       brassTrim.position.y = 0.52;
 
-      // Four Pillars & Ornate Canopy of Arjuna's Chariot
+      // Intricate carved gold & bronze relief panels and balustrade rails around the chariot platform
+      [-0.56, 0.56].forEach((sideZ) => {
+        for (let b = -2; b <= 2; b++) {
+          const boss = new THREE.Mesh(
+            new THREE.SphereGeometry(0.032, 8, 8),
+            goldLeafMat
+          );
+          boss.position.set(b * 0.26, 0.42, sideZ);
+          chariotGroup.add(boss);
+        }
+        const sideRail = new THREE.Mesh(
+          new THREE.BoxGeometry(1.18, 0.04, 0.04),
+          goldLeafMat
+        );
+        sideRail.position.set(-0.04, 0.64, sideZ * 0.88);
+        chariotGroup.add(sideRail);
+      });
+
+      // Sacred Conch (Panchajanya) & Celestial Bow (Gandiva) mounted on the Chariot Deck
+      const conch = new THREE.Mesh(
+        new THREE.ConeGeometry(0.055, 0.16, 8),
+        agedIvoryMat
+      );
+      conch.position.set(0.42, 0.6, 0.28);
+      conch.rotation.z = Math.PI / 2 - 0.3;
+
+      const gandivaBow = new THREE.Mesh(
+        new THREE.TorusGeometry(0.28, 0.018, 8, 20, Math.PI * 1.15),
+        goldLeafMat
+      );
+      gandivaBow.position.set(-0.18, 0.82, 0.46);
+      gandivaBow.rotation.z = 0.4;
+      chariotGroup.add(lowerPlinth, conch, gandivaBow);
+
+      // Four Fluted Pillars & Ornate Carved Canopy of Arjuna's Chariot
       [
         [-0.5, -0.4],
         [0.5, -0.4],
         [-0.5, 0.4],
         [0.5, 0.4],
       ].forEach(([px, pz]) => {
+        const postBase = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.07, 0.08, 0.08, 8),
+          goldLeafMat
+        );
+        postBase.position.set(px, 0.58, pz);
         const post = new THREE.Mesh(
           new THREE.CylinderGeometry(0.045, 0.045, 1.06, 8),
           antiqueBrassMat
         );
         post.position.set(px, 1.04, pz);
         post.castShadow = true;
-        chariotGroup.add(post);
+        const postRing = new THREE.Mesh(
+          new THREE.TorusGeometry(0.058, 0.016, 6, 12),
+          goldLeafMat
+        );
+        postRing.rotation.x = Math.PI / 2;
+        postRing.position.set(px, 1.08, pz);
+        const postCap = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 0.06, 0.12),
+          goldLeafMat
+        );
+        postCap.position.set(px, 1.54, pz);
+        chariotGroup.add(postBase, post, postRing, postCap);
       });
+
+      // Carved Cornice & Stepped Shikara Canopy Dome with Golden Kalasha Finial
+      const canopyCornice = new THREE.Mesh(
+        new THREE.BoxGeometry(1.22, 0.07, 0.98),
+        carvedWalnutMat
+      );
+      canopyCornice.position.y = 1.56;
+      const canopyGoldBand = new THREE.Mesh(
+        new THREE.BoxGeometry(1.26, 0.035, 1.02),
+        goldLeafMat
+      );
+      canopyGoldBand.position.y = 1.6;
 
       const canopyDome = new THREE.Mesh(
         new THREE.ConeGeometry(0.88, 0.58, 8),
@@ -841,7 +1417,21 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       canopyDome.rotation.y = Math.PI / 8;
       canopyDome.castShadow = true;
 
-      // Divine Kapi Dhwaja (Hanuman Flag Standard)
+      const canopyUpperTier = new THREE.Mesh(
+        new THREE.ConeGeometry(0.46, 0.28, 8),
+        goldLeafMat
+      );
+      canopyUpperTier.position.y = 1.96;
+      canopyUpperTier.rotation.y = Math.PI / 8;
+
+      const canopyKalasha = new THREE.Mesh(
+        new THREE.SphereGeometry(0.065, 10, 10),
+        goldLeafMat
+      );
+      canopyKalasha.position.y = 2.08;
+      chariotGroup.add(canopyCornice, canopyGoldBand, canopyUpperTier, canopyKalasha);
+
+      // Divine Kapi Dhwaja (Hanuman Flag Standard) with Golden Border & Swallowtail Fly
       const flagMast = new THREE.Mesh(
         new THREE.CylinderGeometry(0.02, 0.02, 0.85, 6),
         burnishedBrassMat
@@ -849,10 +1439,18 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       flagMast.position.set(-0.2, 2.22, 0);
 
       const flagCloth = new THREE.Mesh(
-        new THREE.BoxGeometry(0.38, 0.24, 0.02),
+        new THREE.BoxGeometry(0.42, 0.24, 0.022),
         sealingWaxMat
       );
-      flagCloth.position.set(-0.4, 2.38, 0);
+      flagCloth.position.set(-0.42, 2.38, 0);
+
+      const flagGoldTrimTop = new THREE.Mesh(
+        new THREE.BoxGeometry(0.44, 0.025, 0.026),
+        goldLeafMat
+      );
+      flagGoldTrimTop.position.set(-0.42, 2.5, 0);
+      const flagGoldTrimBot = flagGoldTrimTop.clone();
+      flagGoldTrimBot.position.set(-0.42, 2.26, 0);
 
       const flagEmblem = new THREE.Mesh(
         new THREE.SphereGeometry(0.06, 8, 8),
@@ -861,7 +1459,7 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       flagEmblem.position.set(-0.4, 2.38, 0);
       flagEmblem.scale.set(1, 1, 0.6);
 
-      // Golden Arrow Quivers on Chariot Sides
+      // Golden Arrow Quivers on Chariot Sides with Bundled Arrow Shafts
       [-0.48, 0.48].forEach((qz) => {
         const quiver = new THREE.Mesh(
           new THREE.CylinderGeometry(0.06, 0.05, 0.45, 8),
@@ -871,11 +1469,30 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
         quiver.rotation.z = -0.32;
         quiver.castShadow = true;
         chariotGroup.add(quiver);
+
+        [-0.02, 0, 0.02].forEach((ao) => {
+          const arrowTip = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.008, 0.008, 0.16, 5),
+            agedIvoryMat
+          );
+          arrowTip.position.set(-0.28 + ao, 0.96, qz + ao);
+          arrowTip.rotation.z = -0.32;
+          chariotGroup.add(arrowTip);
+        });
       });
 
-      chariotGroup.add(chassis, brassTrim, canopyDome, flagMast, flagCloth, flagEmblem);
+      chariotGroup.add(
+        chassis,
+        brassTrim,
+        canopyDome,
+        flagMast,
+        flagCloth,
+        flagGoldTrimTop,
+        flagGoldTrimBot,
+        flagEmblem
+      );
 
-      // Spoked Bronze Chariot Wheels
+      // Spoked Bronze Chariot Wheels with Inner Lotus Ring, Ornamental Hub & Golden Rim Studs
       const buildSpokedWheel = (zPos: number) => {
         const wGroup = new THREE.Group();
         wGroup.position.set(0, 0.52, zPos);
@@ -885,20 +1502,46 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
           burnishedBrassMat
         );
         rim.castShadow = true;
+
+        const innerLotusRing = new THREE.Mesh(
+          new THREE.TorusGeometry(0.36, 0.022, 8, 24),
+          goldLeafMat
+        );
+
         const hub = new THREE.Mesh(
           new THREE.CylinderGeometry(0.14, 0.14, 0.16, 12),
           antiqueBrassMat
         );
         hub.rotation.x = Math.PI / 2;
-        wGroup.add(rim, hub);
+
+        const axleCap = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.06, 0.09, 0.24, 10),
+          goldLeafMat
+        );
+        axleCap.rotation.x = Math.PI / 2;
+        wGroup.add(rim, innerLotusRing, hub, axleCap);
 
         for (let s = 0; s < 12; s++) {
+          const spokeAngle = (s / 12) * Math.PI;
           const spoke = new THREE.Mesh(
             new THREE.CylinderGeometry(0.018, 0.018, 1.04, 6),
             antiqueBrassMat
           );
-          spoke.rotation.z = (s / 12) * Math.PI;
+          spoke.rotation.z = spokeAngle;
           wGroup.add(spoke);
+
+          // Golden rivets along the outer bronze rim
+          const studAngle = (s / 12) * Math.PI * 2;
+          const stud = new THREE.Mesh(
+            new THREE.SphereGeometry(0.022, 6, 6),
+            goldLeafMat
+          );
+          stud.position.set(
+            Math.cos(studAngle) * 0.54,
+            Math.sin(studAngle) * 0.54,
+            zPos > 0 ? 0.05 : -0.05
+          );
+          wGroup.add(stud);
         }
         return wGroup;
       };
@@ -908,7 +1551,22 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       chariotGroup.add(leftWheel, rightWheel);
       animatedParts.push(leftWheel, rightWheel);
 
-      // Two Ivory War Horses & Bronze Reins
+      // Carved Draft Pole & Ornamental Golden Yoke (Juga) connecting the Horses to the Chariot
+      const draftPole = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.028, 0.036, 1.35, 8),
+        carvedWalnutMat
+      );
+      draftPole.position.set(0.82, 0.42, 0);
+      draftPole.rotation.z = Math.PI / 2 - 0.08;
+      const yokeBeam = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.025, 0.025, 0.88, 8),
+        goldLeafMat
+      );
+      yokeBeam.position.set(1.36, 0.55, 0);
+      yokeBeam.rotation.x = Math.PI / 2;
+      chariotGroup.add(draftPole, yokeBeam);
+
+      // Two Caparisoned Ivory War Horses & Arched Bronze Reins
       [-0.34, 0.34].forEach((hz) => {
         const horse = new THREE.Group();
         horse.position.set(1.18, 0.38, hz);
@@ -918,6 +1576,19 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
           agedIvoryMat
         );
         torso.castShadow = true;
+
+        // Golden & crimson royal saddle-cloth caparison
+        const saddleCloth = new THREE.Mesh(
+          new THREE.BoxGeometry(0.32, 0.18, 0.245),
+          sealingWaxMat
+        );
+        saddleCloth.position.set(-0.02, 0.06, 0);
+        const chestHarness = new THREE.Mesh(
+          new THREE.BoxGeometry(0.64, 0.045, 0.235),
+          goldLeafMat
+        );
+        chestHarness.position.set(0.02, 0.06, 0);
+
         const neck = new THREE.Mesh(
           new THREE.CylinderGeometry(0.08, 0.12, 0.38, 8),
           agedIvoryMat
@@ -929,6 +1600,13 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
           agedIvoryMat
         );
         head.position.set(0.38, 0.34, 0);
+
+        // Golden forehead chamfron & crest plume
+        const chamfron = new THREE.Mesh(
+          new THREE.ConeGeometry(0.032, 0.09, 6),
+          goldLeafMat
+        );
+        chamfron.position.set(0.38, 0.43, 0);
 
         [
           [-0.22, -0.07],
@@ -951,13 +1629,38 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
         rein.position.set(-0.32, 0.24, 0);
         rein.rotation.z = Math.PI / 2 - 0.15;
 
-        horse.add(torso, neck, head, rein);
+        const outerRein = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.01, 0.01, 0.92, 6),
+          goldLeafMat
+        );
+        outerRein.position.set(-0.3, 0.27, hz > 0 ? 0.06 : -0.06);
+        outerRein.rotation.z = Math.PI / 2 - 0.12;
+
+        horse.add(torso, saddleCloth, chestHarness, neck, head, chamfron, rein, outerRein);
         chariotGroup.add(horse);
       });
 
       dioramaCore.add(chariotGroup);
 
-      // Battlefield standards on the perimeter
+      // Subtle Swirling Dust Plumes behind the Chariot Wheels & Hooves
+      [
+        { x: -0.68, y: 0.26, z: 0.58, r: 0.12 },
+        { x: -0.82, y: 0.25, z: 0.62, r: 0.09 },
+        { x: -0.68, y: 0.26, z: -0.58, r: 0.12 },
+        { x: -0.82, y: 0.25, z: -0.62, r: 0.09 },
+        { x: 0.72, y: 0.24, z: 0.34, r: 0.085 },
+        { x: 0.72, y: 0.24, z: -0.34, r: 0.085 },
+      ].forEach((d) => {
+        const dustPuff = new THREE.Mesh(
+          new THREE.DodecahedronGeometry(d.r, 1),
+          sandstoneMat
+        );
+        dustPuff.position.set(d.x, d.y, d.z);
+        dustPuff.scale.set(1.35, 0.65, 1.15);
+        dioramaCore.add(dustPuff);
+      });
+
+      // Battlefield War Standards on the Perimeter with Golden Finials, Trim & Emblems
       [
         [-1.35, -0.85],
         [-1.25, 0.9],
@@ -968,13 +1671,34 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
           carvedWalnutMat
         );
         pole.position.set(sx, 0.75, sz);
+        const poleFinial = new THREE.Mesh(
+          new THREE.ConeGeometry(0.04, 0.11, 6),
+          goldLeafMat
+        );
+        poleFinial.position.set(sx, 1.46, sz);
         const flag = new THREE.Mesh(
           new THREE.BoxGeometry(0.38, 0.22, 0.03),
           sealingWaxMat
         );
         flag.position.set(sx + 0.18, 1.28, sz);
-        dioramaCore.add(pole, flag);
+        const flagBorder = new THREE.Mesh(
+          new THREE.BoxGeometry(0.4, 0.024, 0.034),
+          goldLeafMat
+        );
+        flagBorder.position.set(sx + 0.18, 1.39, sz);
+        const flagSun = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.045, 0.045, 0.036, 8),
+          goldLeafMat
+        );
+        flagSun.rotation.x = Math.PI / 2;
+        flagSun.position.set(sx + 0.18, 1.28, sz);
+        dioramaCore.add(pole, poleFinial, flag, flagBorder, flagSun);
       });
+
+      // Warm Golden-Amber Kurukshetra Atmospheric Light
+      const kurukshetraLight = new THREE.PointLight('#E8A848', 2.2, 4.8);
+      kurukshetraLight.position.set(0.2, 1.85, 0.35);
+      dioramaCore.add(kurukshetraLight);
       break;
     }
 
@@ -1330,34 +2054,9 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
 
     case 'odyssey': {
       // VI. The Odyssey - The Harbor of Ithaca (Centerpiece Masterpiece)
-      // Inlaid Brass Compass Rose + Sheltered Aegean Harbor + Greek Classical Ruins (Doric columns, architrave) +
+      // Sheltered Aegean Harbor + Greek Classical Ruins (Doric columns, architrave) +
       // Sandy shoreline + Wooden jetty dock with amphorae + Hillside hall with glowing hearth window +
       // Sacred olive trees + Ancient Greek Trireme with shields, ram, sail, and sea-foam wake.
-      const compassRoseGroup = new THREE.Group();
-      compassRoseGroup.position.y = 0.02;
-
-      const outerBrassCompass = new THREE.Mesh(
-        new THREE.TorusGeometry(2.85, 0.065, 12, 64),
-        burnishedBrassMat
-      );
-      outerBrassCompass.rotation.x = Math.PI / 2;
-      compassRoseGroup.add(outerBrassCompass);
-
-      // 8 Brass Cardinal & Intercardinal Compass Points around the Harbor Base
-      for (let pt = 0; pt < 8; pt++) {
-        const a = (pt / 8) * Math.PI * 2;
-        const isCardinal = pt % 2 === 0;
-        const pointerSpike = new THREE.Mesh(
-          new THREE.ConeGeometry(isCardinal ? 0.16 : 0.1, isCardinal ? 0.58 : 0.38, 4),
-          pt === 0 ? sealingWaxMat : burnishedBrassMat
-        );
-        const r = 2.88;
-        pointerSpike.position.set(Math.cos(a) * r, 0.04, Math.sin(a) * r);
-        pointerSpike.rotation.x = Math.PI / 2;
-        pointerSpike.rotation.z = -a - Math.PI / 2;
-        compassRoseGroup.add(pointerSpike);
-      }
-      dioramaCore.add(compassRoseGroup);
 
       // Sheltered Aegean Sea Basin inside the Harbor
       const harborWater = new THREE.Mesh(
@@ -1851,18 +2550,7 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
         });
       }
 
-      // 4. Subtle V-shaped sea foam wake ripples on the water surface alongside the hull
-      [-1, 1].forEach((side) => {
-        const wakeRipple = new THREE.Mesh(
-          new THREE.BoxGeometry(0.62, 0.015, 0.03),
-          foamWhiteMat
-        );
-        wakeRipple.position.set(0.68, -0.08, side * 0.24);
-        wakeRipple.rotation.y = -side * 0.22;
-        triremeGroup.add(wakeRipple);
-      });
-
-      // 5. Central Mast, Upper & Lower Spars, and Naturally Billowing Square Sail
+      // 4. Central Mast, Upper & Lower Spars, and Naturally Billowing Square Sail
       const mast = new THREE.Mesh(
         new THREE.CylinderGeometry(0.032, 0.042, 1.48, 8),
         carvedWalnutMat
@@ -2442,10 +3130,10 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
   root.add(floatingShadowMesh);
 
   // 3D Vellum & Brass Cartouche Nameplate attached to the island so its title travels with it
-  const cartoucheW = realm.isFavoriteMasterpiece ? 5.6 : 4.85;
-  const cartoucheD = 0.88;
-  const baseCartoucheZ = realm.isFavoriteMasterpiece ? 3.55 : 2.68;
-  const liftedCartoucheZ = realm.isFavoriteMasterpiece ? 3.45 : 2.82;
+  const cartoucheW = realm.isFavoriteMasterpiece ? 3.85 : 4.15;
+  const cartoucheD = realm.isFavoriteMasterpiece ? 0.76 : 0.8;
+  const baseCartoucheZ = realm.isFavoriteMasterpiece ? 3.25 : 2.62;
+  const liftedCartoucheZ = realm.isFavoriteMasterpiece ? 3.35 : 2.68;
 
   const cartoucheTex = createIslandCartoucheTexture(realm);
   const cartoucheTopMat = new THREE.MeshBasicMaterial({
@@ -2514,6 +3202,8 @@ export function buildRealmMonument(realm: LiteraryRealm): MonumentGroupHandles {
       liftedCartoucheZ,
       effectiveLift
     );
+    const plaqueLiftScale = THREE.MathUtils.lerp(1.0, 0.88, effectiveLift);
+    cartouchePlaqueGroup.scale.setScalar(plaqueLiftScale);
     cartouchePlaqueGroup.rotation.set(THREE.MathUtils.lerp(0, 0.36, effectiveLift), 0, 0);
 
     // Physical Brass & Sealing-Wax Pin Marker raises and floats when hovered or selected

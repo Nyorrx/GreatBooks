@@ -83,35 +83,35 @@ export const ObservatoryConsole: React.FC<ObservatoryConsoleProps> = ({
       label: 'The Seven Realms',
       shortLabel: 'Chart Map',
       icon: <Compass className="h-4 w-4" aria-hidden="true" />,
-      subtitle: "Navigator's Chart Table",
+      subtitle: '3D Map & Reading Notes',
     },
     {
       id: 'journal',
       label: "The Traveler's Identity",
       shortLabel: 'Logbook',
       icon: <BookOpen className="h-4 w-4" aria-hidden="true" />,
-      subtitle: "Personal Logbook & Profile",
+      subtitle: 'About Me & Reading Background',
     },
     {
       id: 'odyssey-spotlight',
       label: 'The Favorite Voyage',
       shortLabel: 'Odyssey',
       icon: <Award className="h-4 w-4" aria-hidden="true" />,
-      subtitle: "Captain's Log: The Odyssey",
+      subtitle: 'Why I Chose The Odyssey',
     },
     {
       id: 'constellations',
       label: "The Navigator's Lessons",
       shortLabel: 'Lessons',
       icon: <Map className="h-4 w-4" aria-hidden="true" />,
-      subtitle: 'Comparative Cartography',
+      subtitle: 'Comparing All 7 Books',
     },
     {
       id: 'reflection',
       label: 'The Last Page of the Journal',
       shortLabel: 'Reflection',
       icon: <Feather className="h-4 w-4" aria-hidden="true" />,
-      subtitle: 'Personal Reflections',
+      subtitle: 'Course Reflections',
     },
   ];
 
@@ -204,7 +204,7 @@ export const ObservatoryConsole: React.FC<ObservatoryConsoleProps> = ({
                   The Literary Treasure Map
                 </span>
                 <span className="block font-serif text-xs italic text-[#F4ECD8]/90">
-                  Seven Horizons of Antiquity • {activeCompassRealm.bearingLabel}
+                  Seven Works • {activeCompassRealm.bearingLabel}
                 </span>
               </div>
             </button>
@@ -327,7 +327,7 @@ export const ObservatoryConsole: React.FC<ObservatoryConsoleProps> = ({
             </span>
 
             <span className="font-mono text-[10px] text-[#E6D7BE]/80">
-              Canonical Order
+              Reading Order
             </span>
           </div>
 

@@ -17,7 +17,7 @@ export const ReflectionModal: React.FC<ReflectionModalProps> = ({
       aria-labelledby="reflection-heading"
       className="no-print fixed inset-x-0 top-14 bottom-3 sm:top-16 sm:bottom-12 lg:top-20 lg:bottom-20 z-30 flex items-center justify-center p-2.5 sm:p-4 lg:p-6"
     >
-      <div className="leather-folio relative flex max-h-full w-full max-w-4xl flex-col overflow-hidden rounded-lg p-1.5 sm:p-2.5">
+      <div className="leather-folio relative flex max-h-full w-full max-w-5xl flex-col overflow-hidden rounded-lg p-1.5 sm:p-2.5">
         {/* Leather & Brass Header Bar */}
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#A98545]/50 bg-[#24160E] px-3.5 py-2.5 sm:px-7 sm:py-3.5 text-[#F4ECD8] sm:rounded-t">
           <div className="flex items-center gap-3">
@@ -26,7 +26,7 @@ export const ReflectionModal: React.FC<ReflectionModalProps> = ({
             </div>
             <div>
               <span className="font-mono text-[11px] font-semibold tracking-widest text-[#F3C879] uppercase">
-                Folio IV • Closing Pages of the Navigator&apos;s Logbook
+                Folio IV • Personal Course Reflections
               </span>
               <h2
                 id="reflection-heading"
@@ -89,7 +89,7 @@ export const ReflectionModal: React.FC<ReflectionModalProps> = ({
               <div className="mx-auto inline-flex items-center gap-1.5 text-[#873B35]">
                 <ScrollText className="h-4 w-4" aria-hidden="true" />
                 <span className="font-display text-xs font-bold tracking-widest uppercase">
-                  Colophon • Beyond the Seventh Horizon
+                  Closing Note • Looking Ahead
                 </span>
               </div>
               <p className="mx-auto mt-3 max-w-2xl font-serif text-base leading-relaxed font-semibold text-[#2C1E12] italic sm:text-lg">

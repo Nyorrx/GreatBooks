@@ -35,7 +35,7 @@ export const ConstellationsModal: React.FC<ConstellationsModalProps> = ({
             </div>
             <div>
               <span className="font-mono text-[11px] font-semibold tracking-widest text-[#F3C879] uppercase">
-                Folio III • Synthesis of Learning &amp; Historical Cartographer&apos;s Chart
+                Folio III • Comparing the Seven Works
               </span>
               <h2
                 id="constellations-heading"
@@ -101,7 +101,7 @@ export const ConstellationsModal: React.FC<ConstellationsModalProps> = ({
                   Comparative Cartographer&apos;s Matrix
                 </span>
                 <h3 className="font-display text-lg font-bold text-[#2C1E12] uppercase sm:text-xl">
-                  Seven Masterpieces Across Civilizations, Lenses &amp; Human Concerns
+                  Comparing All Seven Books by Culture, Lens &amp; Main Theme
                 </h3>
               </div>
 
@@ -134,12 +134,12 @@ export const ConstellationsModal: React.FC<ConstellationsModalProps> = ({
               <table className="w-full border-collapse text-left text-xs sm:text-sm">
                 <thead>
                   <tr className="border-b-2 border-[#A98545] bg-[#24160E] font-display text-[11px] font-bold tracking-wider text-[#F3C879] uppercase">
-                    <th className="py-3.5 pr-3 pl-4">Landmark &amp; Masterpiece</th>
-                    <th className="px-3 py-3.5">Cultural / Historical Context</th>
-                    <th className="px-3 py-3.5">Primary Literary Lenses</th>
-                    <th className="px-3 py-3.5">Central Human Concerns</th>
-                    <th className="px-3 py-3.5">Enduring Philosophical Insight</th>
-                    <th className="py-3.5 pr-4 pl-3 text-right">Field Journal</th>
+                    <th className="py-3.5 pr-3 pl-4">Book &amp; Landmark</th>
+                    <th className="px-3 py-3.5">Time Period &amp; Culture</th>
+                    <th className="px-3 py-3.5">Literary Lenses Used</th>
+                    <th className="px-3 py-3.5">Main Themes</th>
+                    <th className="px-3 py-3.5">Key Takeaway</th>
+                    <th className="py-3.5 pr-4 pl-3 text-right">Notes</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#A98545]/50 font-serif text-[#2C1E12]">

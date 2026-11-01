@@ -70,10 +70,10 @@ describe('Website Redesign: Three-Part Layout, Navigator Chart, and Island Audio
     );
     expect(stopBtn).toBeDefined();
 
-    // Verify audio source path is bound to user's pasted soundtrack
+    // Verify audio source path is bound to user's soundtrack
     const audioElem = container.querySelector('audio');
     expect(audioElem).toBeDefined();
-    expect(audioElem?.getAttribute('src')).toContain('The%20Odyssey%20Soundtrack');
+    expect(audioElem?.getAttribute('src')).toMatch(/(soundtrack\.mp3|The%20Odyssey%20Soundtrack)/);
 
     // Verify audio bar starts at 50% and progress scrubber is removed
     const volumeSlider = container.querySelector('input[aria-label="Soundtrack audio bar"]') as HTMLInputElement | null;

@@ -52,13 +52,15 @@ export function computeFloatingDestination(
   if (!isMobile) {
     const rightMargin = 16;
     const chartWidth =
-      safeW >= 1024
-        ? Math.min(safeW * 0.50, 980)
-        : safeW >= 768
-          ? 460
-          : 420;
+      safeW >= 1280
+        ? Math.min(safeW * 0.56, 1100)
+        : safeW >= 1024
+          ? Math.min(safeW * 0.54, 1060)
+          : safeW >= 768
+            ? 480
+            : 460;
     chartLeftPx = safeW - chartWidth - rightMargin;
-    leftSafePx = 20;
+    leftSafePx = 28;
     availableWidthPx = Math.max(220, chartLeftPx - leftSafePx - 16);
     topSafePx = 64;
     bottomSafePx = safeH - 32;
@@ -1116,15 +1118,14 @@ export const CelestialAtlasCanvas: React.FC<CelestialAtlasCanvasProps> = ({
           <div className="border-2 border-[#59432E] p-5 sm:p-6">
             <div className="text-center">
               <p className="font-mono text-xs font-semibold tracking-widest text-[#873B35] uppercase">
-                Illustrated Cartographic Folio • 2D Chart Table Mode
+                2D Map View • Great Books Portfolio
               </p>
               <h2 className="mt-1 font-display text-2xl font-bold text-[#2C1E12] sm:text-3xl">
-                The Literary Treasure Map: Seven Horizons of Antiquity
+                The Literary Treasure Map: Seven Works of World Literature
               </h2>
               <p className="mx-auto mt-2 max-w-2xl text-sm text-[#59432E]">
-                Explore all seven handcrafted literary landmarks across the ancient world. Select any
-                destination below to unfold its leather-bound Field Journal and complete literary
-                analysis.
+                Browse all seven books from our Great Books course below. Click any card to open my
+                reading notes and literary analysis.
               </p>
             </div>
 
@@ -1202,10 +1203,10 @@ export const CelestialAtlasCanvas: React.FC<CelestialAtlasCanvasProps> = ({
         >
           <div className="vellum-sheet rounded-sm border-2 border-[#A98545] px-6 py-4 text-center shadow-xl">
             <p className="font-display text-sm font-bold tracking-wider text-[#2C1E12] uppercase">
-              Unrolling the Navigator&apos;s Parchment Chart...
+              Opening the Map...
             </p>
             <p className="mt-1 font-serif text-xs italic text-[#59432E]">
-              Preparing the seven carved miniature landscapes and lighting the cabin lantern
+              Setting up the 3D table and the seven book landmarks
             </p>
           </div>
         </div>
